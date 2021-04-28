@@ -18,9 +18,16 @@ description: >-
 
 ## **Методы трекинга поведения пользователя**
 
-Трекинг API придерживается [общих принципов интеграционных API](obshie-principy-integracii-s-retail-rocket.md). 
+Трекинг API придерживается [общих принципов интеграционных API](obshie-principy-integracii-s-retail-rocket.md).
 
-Более подробнее про параметры методов можно прочитать по их ссылкам:  [`apiKey`](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya), [`partnerId`](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina), [`sessionExternalId`](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei), [`timestamp`](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) и [параметры продукта](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)\(`stockId`, `productId`, `groupId`\).
+{% hint style="info" %}
+Более подробнее про параметры методов можно прочитать по их ссылкам: 
+
+* [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) \(`apiKey`\)
+* [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) \(`sessionExternalId`\)
+* [Временная метка вызова](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya).
+* [Параметры товарных предложений](poluchenie-rekomendacii-v-mobilnom-prilozhenii.md#personalnye-rekomendacii)\(`stockId`, `productId`, `groupId`\)
+{% endhint %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
 {% api-method-summary %}
@@ -57,7 +64,7 @@ view
 {% endapi-method-parameter %}
 
 {% api-method-parameter type="string" name="timestamp" %}
-Временная метка пользовательского события.
+Временная метка вызова
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -183,10 +190,7 @@ groupView
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Должен быть вызван при каждом просмотре карточки товара на которой представлен групповой товар.
-
-Более подробнее про параметры методов можно прочитать по их ссылкам:  [`apiKey`](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya), [`partnerId`](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina), [`sessionExternalId`](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei), [`timestamp`](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) и [параметры продукта](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)\(`stockId`, `productId`, `groupId`\).
-
+Должен быть вызван при каждом просмотре карточки товара на которой представлен групповой товар.Более подробнее про параметры методов можно прочитать по их ссылкам: `apiKey`, `partnerId`, `sessionExternalId`, `timestamp` и параметры продукта\(`stockId`, `productId`, `groupId`\).
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -635,10 +639,7 @@ categoryView
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Должен быть вызвал при просмотре страницы категори товаров
-
-Более подробнее про параметры методов можно прочитать по их ссылкам:  [`apiKey`](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya), [`partnerId`](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina), [`sessionExternalId`](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei), [`timestamp`](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) и [параметры продукта](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)\(`stockId`, `productId`, `groupId`\).
-
+Должен быть вызвал при просмотре страницы категори товаровБолее подробнее про параметры методов можно прочитать по их ссылкам: `apiKey`, `partnerId`, `sessionExternalId`, `timestamp` и параметры продукта\(`stockId`, `productId`, `groupId`\).
 {% endapi-method-description %}
 
 {% api-method-spec %}
