@@ -6,7 +6,7 @@ description: >-
 
 # API трекинга пользовательского поведния
 
-Пользовательского поведение необходимо для многих продуктов Retail Rocket: рекомендации, автоматизированые пользовательские кампании, метрики эфективности комуникации и т.д. 
+Пользовательского поведение необходимо для многих продуктов Retail Rocket: рекомендации, автоматизированые пользовательские кампании, метрики эфективности комуникации и т.д.
 
 ## **Общие концепции**
 
@@ -18,7 +18,9 @@ description: >-
 
 ## **Методы трекинга поведения пользователя**
 
-Трекинг API придерживается [общих принципов интеграционных API](obshie-principy-integracii-s-retail-rocket.md) и многие параметры вызова метода должны соответствовать требованиям описанных в документе.
+Трекинг API придерживается [общих принципов интеграционных API](obshie-principy-integracii-s-retail-rocket.md). 
+
+Более подробнее про параметры методов можно прочитать по их ссылкам:  [`apiKey`](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya), [`partnerId`](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina), [`sessionExternalId`](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei), [`timestamp`](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) и [параметры продукта](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)\(`stockId`, `productId`, `groupId`\).
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
 {% api-method-summary %}
@@ -26,7 +28,7 @@ view
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Должен быть вызван при каждом просмотре карточки товара пользователем.  
+Должен быть вызван при каждом просмотре карточки товара пользователем.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -55,7 +57,7 @@ view
 {% endapi-method-parameter %}
 
 {% api-method-parameter type="string" name="timestamp" %}
-[Временная метка пользовательского события.](obshie-principy-integracii-s-retail-rocket.md)
+Временная метка пользовательского события.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -66,7 +68,7 @@ view
 запрос принят
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -76,7 +78,7 @@ view
 ошибка в запросе, необходимо проверить правильность построения запроса
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -86,17 +88,17 @@ view
 ошибка аутентификации, проверьте корректность параметра apiKey
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=403 %}
 {% api-method-response-example-description %}
-доступ запрещен 
+доступ запрещен
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -106,7 +108,7 @@ view
 запрошенный ресурс не найден, необходимо проверить правильность URL
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -161,7 +163,7 @@ namespace App
             }";
 
             using var client = new HttpClient();
-            
+
             await client.PostAsync(
                 requestUri: url,
                 content: new StringContent(
@@ -252,7 +254,7 @@ groupView
 
 {% api-method-response-example httpCode=403 %}
 {% api-method-response-example-description %}
-доступ запрещен 
+доступ запрещен
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -322,7 +324,7 @@ namespace App
             }";
 
             using var client = new HttpClient();
-            
+
             await client.PostAsync(
                 requestUri: url,
                 content: new StringContent(
@@ -335,8 +337,6 @@ namespace App
 ```
 {% endtab %}
 {% endtabs %}
-
-#### 
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/addToBasket" %}
 {% api-method-summary %}
@@ -384,7 +384,7 @@ addToBasket
 запрос принят
 {% endapi-method-response-example-description %}
 
-```
+```text
 {}
 ```
 {% endapi-method-response-example %}
@@ -394,7 +394,7 @@ addToBasket
 ошибка в запросе, необходимо проверить правильность построения запроса
 {% endapi-method-response-example-description %}
 
-```
+```text
 {}
 ```
 {% endapi-method-response-example %}
@@ -404,7 +404,7 @@ addToBasket
 ошибка аутентификации, проверьте корректность пары partnerId, ApiKey
 {% endapi-method-response-example-description %}
 
-```
+```text
 {}
 ```
 {% endapi-method-response-example %}
@@ -414,7 +414,7 @@ addToBasket
 доступ запрещен
 {% endapi-method-response-example-description %}
 
-```
+```text
 {}
 ```
 {% endapi-method-response-example %}
@@ -424,7 +424,7 @@ addToBasket
 запрошенный ресурс не найден, необходимо проверить правильность URL
 {% endapi-method-response-example-description %}
 
-```
+```text
 {}
 ```
 {% endapi-method-response-example %}
@@ -479,7 +479,7 @@ namespace App
             }";
 
             using var client = new HttpClient();
-            
+
             await client.PostAsync(
                 requestUri: url,
                 content: new StringContent(
@@ -506,17 +506,17 @@ order
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации, описан в разделе "Авторизация"
+Ключ авторизации
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина, описан в разделе "Идентификатор интернет магазина"
+Идентификатор интернет магазина
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Строковый идентификатор пользователя, описан в разеделе "Управление сессией"
+Строковый идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="productId" type="integer" required=true %}
@@ -551,7 +551,7 @@ order
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -612,7 +612,7 @@ namespace App
             }";
 
             using var client = new HttpClient();
-            
+
             await client.PostAsync(
                 requestUri: url,
                 content: new StringContent(
@@ -668,7 +668,7 @@ categoryView
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -721,7 +721,7 @@ namespace App
             }";
 
             using var client = new HttpClient();
-            
+
             await client.PostAsync(
                 requestUri: url,
                 content: new StringContent(
@@ -777,7 +777,7 @@ search
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -830,7 +830,7 @@ namespace App
             }";
 
             using var client = new HttpClient();
-            
+
             await client.PostAsync(
                 requestUri: url,
                 content: new StringContent(
