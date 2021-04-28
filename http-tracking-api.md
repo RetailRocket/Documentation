@@ -55,7 +55,7 @@ view
 {% endapi-method-parameter %}
 
 {% api-method-parameter type="string" name="timestamp" %}
-Временная метка пользовательского события.
+[Временная метка пользовательского события.](obshie-principy-integracii-s-retail-rocket.md)
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
