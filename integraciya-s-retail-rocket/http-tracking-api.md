@@ -639,7 +639,7 @@ categoryView
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Должен быть вызвал при просмотре страницы категори товаровБолее подробнее про параметры методов можно прочитать по их ссылкам: `apiKey`, `partnerId`, `sessionExternalId`, `timestamp` и параметры продукта\(`stockId`, `productId`, `groupId`\).
+Должен быть вызвал при просмотре страницы категори товаров
 {% endapi-method-description %}
 
 {% api-method-spec %}
