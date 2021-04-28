@@ -26,7 +26,7 @@ description: >-
 * [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) \(`apiKey`\)
 * [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) \(`sessionExternalId`\)
 * [Временная метка вызова](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya).
-* [Параметры товарных предложений](poluchenie-rekomendacii-v-mobilnom-prilozhenii.md#personalnye-rekomendacii)\(`stockId`, `productId`, `groupId`\)
+* [Параметры товарных предложений]()\(`stockId`, `productId`, `groupId`\)
 {% endhint %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
@@ -190,7 +190,7 @@ groupView
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Должен быть вызван при каждом просмотре карточки товара на которой представлен групповой товар.Более подробнее про параметры методов можно прочитать по их ссылкам: `apiKey`, `partnerId`, `sessionExternalId`, `timestamp` и параметры продукта\(`stockId`, `productId`, `groupId`\).
+Должен быть вызван при каждом просмотре карточки товара на которой представлен групповой товар.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -506,7 +506,7 @@ order
 {% endapi-method-summary %}
 
 {% api-method-description %}
-​Должен быть вызван при при покупки каждого товара.
+​Должен быть вызван при при покупки каждого товара. Если в заказе несколько товаров то метод должен быть вызван для каждого товара.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -639,7 +639,7 @@ categoryView
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Должен быть вызвал при просмотре страницы категори товаров
+Должен быть вызван при просмотре страницы категори товаров
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -748,7 +748,7 @@ search
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Должен быть вызван при вводе поисковой фразы на поисковой стронице интернет магазина.
+Должен быть вызван при вводе поисковой фразы на поисковой странице/экране интернет магазина.
 {% endapi-method-description %}
 
 {% api-method-spec %}
