@@ -21,12 +21,12 @@ description: >-
 Трекинг API придерживается [общих принципов интеграционных API](obshie-principy-integracii-s-retail-rocket.md).
 
 {% hint style="info" %}
-Более подробнее про параметры методов можно прочитать по их ссылкам: 
+Более подробнее про параметры методов можно прочитать по их ссылкам:
 
 * [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) \(`apiKey`\)
 * [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) \(`sessionExternalId`\)
-* [Временная метка вызова](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya).
-* [Параметры товарных предложений](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya)\(`stockId`, `productId`, `groupId`\)
+* [Временная метка вызова](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) \(`timestamp`\)
+* [Параметры товарных предложений](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) \(`stockId`, `productId`, `groupId`\)
 {% endhint %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
