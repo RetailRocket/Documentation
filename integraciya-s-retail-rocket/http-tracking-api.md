@@ -362,25 +362,25 @@ addToBasket
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина, описан в разделе "Идентификатор интернет магазина"
+Идентификатор интернет магазина
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Строковый идентификатор пользователя, описан в разеделе "Управление сессией"
+Строковый идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="productId" type="integer" required=true %}
-Идентификатор товара. Должен совпадать с идентификатором товара переданного в товарной базе в систему Retail Rocket
+Идентификатор товара
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="stockId" type="string" required=false %}
-Идентификатор склада/региона с которого был просмотрен товар. Должен совпадать с идентификатором склада товара из товарной базы переданной в Retail Rocket
+Идентификатор склада/региона с которого был просмотрен товар
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="timestamp" type="string" required=false %}
-Временная метка пользовательского события. Описан в разделе "Время пользовательского события"
+Временная метка пользовательского события
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -527,11 +527,11 @@ order
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="productId" type="integer" required=true %}
-Идентификатор товара. Должен совпадать с идентификатором товара переданного в товарной базе в систему Retail Rocket
+Идентификатор товара
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="stockId" type="string" required=false %}
-Идентификатор склада/региона с которого был просмотрен товар. Должен совпадать с идентификатором склада товара из товарной базы переданной в Retail Rocket
+Идентификатор склада/региона с которого был просмотрен товар
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="quantity" type="integer" required=true %}
@@ -543,11 +543,11 @@ order
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="transaction" type="string" required=true %}
-Идентификатор попкупки. Если в заказазе более одного артикла, то они дожны иметь одинаковое знание transaction.
+Идентификатор попкупки
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="timestamp" type="string" required=false %}
-Временная метка пользовательского события. Описан в разделе "Время пользовательского события"
+Временная метка пользовательского события
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
