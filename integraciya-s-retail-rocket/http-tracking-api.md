@@ -16,6 +16,8 @@ description: >-
 
 Все методы трекинг API имеют единый префикс часть URL
 
+[`https://apptracking.retailrocket.net/1.0/`](https://apptracking.retailrocket.net/1.0/)
+
 ## **Методы трекинга поведения пользователя**
 
 Трекинг API придерживается [общих принципов интеграционных API](obshie-principy-integracii-s-retail-rocket.md).
