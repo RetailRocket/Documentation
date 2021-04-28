@@ -5,7 +5,7 @@
 ## Интеграция с Retail Rocket
 
 * [Общие принципы интеграции с Retail Rocket](integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket.md)
-* [API трекинга пользовательского поведния](integraciya-s-retail-rocket/http-tracking-api.md)
+* [API трекинга пользовательского поведения](integraciya-s-retail-rocket/http-tracking-api.md)
 
 ---
 
