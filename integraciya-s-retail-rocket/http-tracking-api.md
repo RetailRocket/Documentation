@@ -26,7 +26,7 @@ description: >-
 * [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) \(`apiKey`\)
 * [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) \(`sessionExternalId`\)
 * [Временная метка вызова](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya).
-* [Параметры товарных предложений]()\(`stockId`, `productId`, `groupId`\)
+* [Параметры товарных предложений](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya)\(`stockId`, `productId`, `groupId`\)
 {% endhint %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
