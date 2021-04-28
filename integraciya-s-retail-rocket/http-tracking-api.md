@@ -29,9 +29,6 @@ view
 
 {% api-method-description %}
 Должен быть вызван при каждом просмотре карточки товара пользователем.
-
-Более подробнее про параметры методов можно прочитать по их ссылкам:  [`apiKey`](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya), [`partnerId`](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina), [`sessionExternalId`](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei), [`timestamp`](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) и [параметры продукта](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)\(`stockId`, `productId`, `groupId`\).
-
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -351,9 +348,6 @@ addToBasket
 
 {% api-method-description %}
 Должен быть вызван при каждом добавление товара в корзину.
-
-Более подробнее про параметры методов можно прочитать по их ссылкам:  [`apiKey`](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya), [`partnerId`](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina), [`sessionExternalId`](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei), [`timestamp`](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) и [параметры продукта](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)\(`stockId`, `productId`, `groupId`\).
-
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -509,9 +503,6 @@ order
 
 {% api-method-description %}
 ​Должен быть вызван при при покупки каждого товара.
-
-Более подробнее про параметры методов можно прочитать по их ссылкам:  [`apiKey`](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya), [`partnerId`](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina), [`sessionExternalId`](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei), [`timestamp`](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) и [параметры продукта](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)\(`stockId`, `productId`, `groupId`\).
-
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -757,9 +748,6 @@ search
 
 {% api-method-description %}
 Должен быть вызван при вводе поисковой фразы на поисковой стронице интернет магазина.
-
-Более подробнее про параметры методов можно прочитать по их ссылкам:  [`apiKey`](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya), [`partnerId`](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina), [`sessionExternalId`](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei), [`timestamp`](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) и [параметры продукта](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)\(`stockId`, `productId`, `groupId`\).
-
 {% endapi-method-description %}
 
 {% api-method-spec %}
