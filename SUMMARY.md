@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Внедрение Retail Rocket в моб. приложение](README.md)
-* [Глосарий Retail Rocket](glosarii-retail-rocket.md)
+* [Глосарий Retail Rocket](README.md)
 
 ## Интеграция с Retail Rocket
 
