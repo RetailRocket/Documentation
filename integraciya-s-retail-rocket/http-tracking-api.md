@@ -54,7 +54,7 @@ view
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Строковый идентификатор пользователя
+Идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="productId" required=true type="integer" %}
@@ -131,9 +131,7 @@ view
 {% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/view \
-   -d apiKey=608423a104249fa8e9952323 \
-   -d partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST https://apptracking.retailrocket.net/1.0/view?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
    -H "Content-type: application/json" \
    --data "
       {
@@ -209,15 +207,15 @@ groupView
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="sessionExternalId" required=true type="string" %}
-Строковый идентификатор пользователя
+Идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="groupId" type="integer" required=true %}
 Идентификатор товарной группы.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="productId" required=true type="integer" %}
-Идентификатор товара
+{% api-method-parameter name="productIds" required=true type="array" %}
+Список идентификаторов товаров
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="stockId" type="string" required=false %}
@@ -290,15 +288,13 @@ groupView
 {% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/groupView \
-   -d apiKey=608423a104249fa8e9952323 \
-   -d partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST https://apptracking.retailrocket.net/1.0/groupView?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
    -H "Content-type: application/json" \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
          \"groupView\": 654321,
-         \"productId\": 123456,
+         \"productId\": [123456, 234567, 345678],
          \"stockId\": \"NewYork\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
@@ -370,7 +366,7 @@ addToBasket
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Строковый идентификатор пользователя
+Идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="productId" type="integer" required=true %}
@@ -447,9 +443,7 @@ addToBasket
 {% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/addToBasket \
-   -d apiKey=608423a104249fa8e9952323 \
-   -d partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST https://apptracking.retailrocket.net/1.0/addToBasket?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
    -H "Content-type: application/json" \
    --data "
       {
@@ -525,7 +519,7 @@ order
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Строковый идентификатор пользователя
+Идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="productId" type="integer" required=true %}
@@ -574,9 +568,7 @@ order
 {% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/order \
-   -d apiKey=608423a104249fa8e9952323 \
-   -d partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST https://apptracking.retailrocket.net/1.0/order?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
    -H "Content-type: application/json" \
    --data "
       {
@@ -648,25 +640,25 @@ categoryView
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="apiKey" type="string" required=true %}
-
+Ключ авторизации
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="partnerId" type="string" required=true %}
-
+Идентификатор интернет магазина
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
-
+Идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="categoryId" type="integer" required=true %}
-
+Идентификатор категории товара
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="timestamp" type="string" required=false %}
-
+Временная метка пользовательского события
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -691,9 +683,7 @@ categoryView
 {% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/categoryView \
-   -d apiKey=608423a104249fa8e9952323 \
-   -d partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST https://apptracking.retailrocket.net/1.0/categoryView?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
    -H "Content-type: application/json" \
    --data "
       {
@@ -757,25 +747,25 @@ search
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="apiKey" type="string" required=true %}
-
+Ключ авторизации
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="partnerId" type="string" required=true %}
-
+Идентификатор интернет магазина
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
-
+Идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="searchPhrase" type="string" required=true %}
-
+Поисковая фраза которую ввел пользователь
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="timestamp" type="string" required=false %}
-
+Временная метка пользовательского события
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -800,14 +790,12 @@ search
 {% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/search \
-   -d apiKey=608423a104249fa8e9952323 \
-   -d partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST https://apptracking.retailrocket.net/1.0/search?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
    -H "Content-type: application/json" \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"searchPhrase\": \"pampers\",
+         \"searchPhrase\": \"подгузник для новорожденных\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
    "
@@ -854,6 +842,44 @@ namespace App
 {% endtabs %}
 
 ## Пакетная загрузка пользовательского поведения
+
+API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий с временными метками.
+
+{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/visitorEvents" %}
+{% api-method-summary %}
+visitorEvents
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="apiKey" type="string" required=false %}
+Ключ авторизации
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="partnerId" type="string" required=false %}
+Идентификатор интернет магазина
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 
 
