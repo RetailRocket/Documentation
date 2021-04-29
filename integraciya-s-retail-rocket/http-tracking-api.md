@@ -214,7 +214,7 @@ groupView
 Идентификатор товарной группы.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="productIds" required=true type="array" %}
+{% api-method-parameter name="productId" required=true type="array" %}
 Список идентификаторов товаров
 {% endapi-method-parameter %}
 
@@ -865,6 +865,12 @@ visitorEvents
 Идентификатор интернет магазина
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="array" required=false %}
+Список пользовательских событий\(visitor event\)
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
