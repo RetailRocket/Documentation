@@ -857,11 +857,11 @@ visitorEvents
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=false %}
+{% api-method-parameter name="apiKey" type="string" required=true %}
 Ключ авторизации
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="partnerId" type="string" required=false %}
+{% api-method-parameter name="partnerId" type="string" required=true %}
 Идентификатор интернет магазина
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
@@ -881,7 +881,65 @@ visitorEvents
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
+```bash
+curl \
+   -X POST https://apptracking.retailrocket.net/1.0/visitorEvents?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
+   -H "Content-type: application/json" \
+   --data "
+    [
+        {
+            \"view\": {
+                \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+                \"productId\": 123456,
+                \"stockId\": \"NewYork\",
+                \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+            }
+        },
+        {
+            \"groupView\": {
+                \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+                \"groupId\": 654321,
+                \"productIds\": [123456, 234567, 345678],
+                \"stockId\": \"NewYork\",
+                \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+            }
+        },
+        {
+            \"addToBasket\": {
+                \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+                \"productId\": 234567,
+                \"stockId\": \"NewYork\",
+                \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+            }
+        },
+        {
+            \"order\": {
+                \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+                \"productId\": 234567,
+                \"stockId\": \"NewYork\",
+                \"quantity\": 3,
+                \"price\": 1321.43,
+                \"transaction\": \"135243\",
+                \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+            }
+        },
+        {
+            \"categoryView\": {
+                \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+                \"categoryId\": 123456,                 
+                \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+            }
+        },
+        {
+            \"search\": {
+                \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+                \"searchPhrase\": \"подгузник для новорожденных\",            
+                \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+            }
+        },
+    ]
+"
+```
 
 
 
