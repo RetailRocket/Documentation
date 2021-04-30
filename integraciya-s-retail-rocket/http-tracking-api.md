@@ -397,7 +397,7 @@ API предоставляет возможно пакетной загрузк�
 {% tab title="Bash" %}
 ```bash
 curl \
-   -X POST "https://apptracking.retailrocket.net/1.0/visitorEvents?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5" \
+   -X POST "https://apptracking.retailrocket.net/1.0/visitorEvents?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
    -H "Content-type: application/json" \
    --data "
     [
