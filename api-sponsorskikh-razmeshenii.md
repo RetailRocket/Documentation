@@ -220,7 +220,6 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/anyPlacements/2e1f1f39-bad1-46a4-9488-c075dd95dc9b/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string'
 ```
 
-
 ## Responses
 
 ### Impression
@@ -254,7 +253,7 @@ Cодержимое для показа товарной полки
 
 Объект типа `Impression` с полем `content` типа строка.
 
-```text
+```javascript
 {
     "id": "impression identifier",
     "content": {
@@ -266,12 +265,12 @@ Cодержимое для показа товарной полки
 
 Объект типа Impression с полем `content` типа товарная полка.
 
-```text
+```javascript
 {
     "id": "impression identifier",
     "content": {
         "id": "content identifier",
-        "productIds": [<product id>, <product id>]
+        "productIds": [123, 321]
     }
 }
 ```
