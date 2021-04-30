@@ -12,43 +12,34 @@ description: >-
 
 Для передачи пользовательского поведения в систему Retail Rocket необходимо для значимых действий пользователя\(просмотр товара, добавление в корзину и т.д.\) вызывать соответствующий действию методы трекиинг API. Ниже описаны методы для каждого такого действия с их параметрами и с возможными кодами ответов и примером вызова.
 
-### **Base URL**
+## **Base URL**
 
 Все методы трекинг API имеют единый префикс часть URL
 
-[`https://apptracking.retailrocket.net/1.0/`](https://apptracking.retailrocket.net/1.0/)
+`https://apptracking.retailrocket.net/1.0/`
 
-## **Методы трекинга поведения пользователя**
+## Resources
 
 Трекинг API придерживается [общих принципов интеграционных API](obshie-principy-integracii-s-retail-rocket.md).
-
-{% hint style="info" %}
-Более подробнее про параметры методов можно прочитать по их ссылкам:
-
-* [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) \(`apiKey`\)
-* [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) \(`sessionExternalId`\)
-* [Временная метка вызова](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) \(`timestamp`\)
-* [Параметры товарных предложений](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) \(`stockId`, `productId`, `groupId`\)
-{% endhint %}
 
 ### Просмотр карточки товара
 
 Должен быть вызван при каждом просмотре карточки товара пользователем
 
-#### URL
+#### Path
 
-`https://apptracking.retailrocket.net`**`/1.0/view`**
+**`view`**
 
 #### HTTP-метод
 
 `POST`
 
-#### Query Parameters
+#### Параметры строки запроса
 
-| Имя параметра | Тип | Описание |
-| :--- | :--- | :--- |
-| `apiKey` | string | Ключ авторизации |
-| `partnerId` | string | Идентификатор интернет магазина |
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 
 #### HTTP-заголовки
 
@@ -56,20 +47,20 @@ description: >-
 
 #### Тело запроса
 
-В теле запроса передается объект типа view со следующими полями:
+В теле запроса передается объект типа **`ViewEvent`** со следующими полями:
 
-| Имя поля | Тип | Описание |
-| :--- | :--- | :--- |
-| `sessionExternalId` | string | Идентификатор пользователя |
-| `productId` | integer | Идентификатор товара |
-| `stockId` | string | Идентификатор склада к которому пренадлежит товар |
-| `timestamp` | string | Метка времени |
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
 
 ```bash
 curl \
-   -X POST 'https://apptracking.retailrocket.net/1.0/view?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5' \
+   -X POST "https://apptracking.retailrocket.net/1.0/view?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
    -H "Content-type: application/json" \
    --data "
       {
@@ -81,225 +72,46 @@ curl \
    "
 ```
 
-{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
-{% api-method-summary %}
-view
-{% endapi-method-summary %}
+### Просмотр карточки группового товара
 
-{% api-method-description %}
-Должен быть вызван при каждом просмотре карточки товара пользователем.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Идентификатор пользователя
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="productId" required=true type="integer" %}
-Идентификатор товара.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="stockId" type="string" required=false %}
-Идентификатор склада к которому пренадлежит товар.
-{% endapi-method-parameter %}
-
-{% api-method-parameter type="string" name="timestamp" %}
-Временная метка вызова
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-запрос принят
-{% endapi-method-response-example-description %}
-
-```text
-
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-ошибка в запросе, необходимо проверить правильность построения запроса
-{% endapi-method-response-example-description %}
-
-```text
-
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-ошибка аутентификации, проверьте корректность параметра apiKey
-{% endapi-method-response-example-description %}
-
-```text
-
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-доступ запрещен
-{% endapi-method-response-example-description %}
-
-```text
-
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-запрошенный ресурс не найден, необходимо проверить правильность URL
-{% endapi-method-response-example-description %}
-
-```text
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-Пример вызова
-
-{% tabs %}
-{% tab title="Bash" %}
-```bash
-curl \
-   -X POST https://apptracking.retailrocket.net/1.0/view?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
-   -H "Content-type: application/json" \
-   --data "
-      {
-         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"productId\": 123456,
-         \"stockId\": \"NewYork\",
-         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
-      }
-   "
-```
-{% endtab %}
-{% endtabs %}
-
-{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/groupView" %}
-{% api-method-summary %}
-groupView
-{% endapi-method-summary %}
-
-{% api-method-description %}
 Должен быть вызван при каждом просмотре карточки товара на которой представлен групповой товар.
-{% endapi-method-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации
-{% endapi-method-parameter %}
+#### Path
 
-{% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+**`groupView`**
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="sessionExternalId" required=true type="string" %}
-Идентификатор пользователя
-{% endapi-method-parameter %}
+#### HTTP-метод
 
-{% api-method-parameter name="groupId" type="integer" required=true %}
-Идентификатор товарной группы.
-{% endapi-method-parameter %}
+`POST`
 
-{% api-method-parameter name="productIds" required=true type="array" %}
-Список идентификаторов товаров
-{% endapi-method-parameter %}
+#### Параметры строки запроса
 
-{% api-method-parameter name="stockId" type="string" required=false %}
-Идентификатор склада/региона с которого был просмотрен товар
-{% endapi-method-parameter %}
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 
-{% api-method-parameter type="string" name="timestamp" %}
-Временная метка пользовательского события
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+#### HTTP-заголовки
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-запрос принят
-{% endapi-method-response-example-description %}
+`Content-type: application/json`
 
-```javascript
-{}
-```
-{% endapi-method-response-example %}
+#### Тело запроса
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-ошибка в запросе, необходимо проверить правильность построения запроса
-{% endapi-method-response-example-description %}
+В теле запроса передается объект типа **`GroupViewEvent`** со следующими полями:
 
-```javascript
-{}
-```
-{% endapi-method-response-example %}
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `groupId` | Да | integer | [Идентификатор товарной группы](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `productIds` | Да | integer | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-ошибка аутентификации, проверьте корректность пары partnerId, ApiKey
-{% endapi-method-response-example-description %}
+#### Пример вызова
 
-```javascript
-{}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-доступ запрещен
-{% endapi-method-response-example-description %}
-
-```javascript
-{}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-запрошенный ресурс не найден, необходимо проверить правильность URL
-{% endapi-method-response-example-description %}
-
-```javascript
-{}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-Пример вызова
-
-{% tabs %}
-{% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/groupView?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST "https://apptracking.retailrocket.net/1.0/groupView?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
    -H "Content-type: application/json" \
    --data "
       {
@@ -311,110 +123,46 @@ curl \
       }
    "
 ```
-{% endtab %}
-{% endtabs %}
 
-{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/addToBasket" %}
-{% api-method-summary %}
-addToBasket
-{% endapi-method-summary %}
+### Добавление товара в корзину
 
-{% api-method-description %}
 Должен быть вызван при каждом добавление товара в корзину.
-{% endapi-method-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации, описан в разделе "Авторизация"
-{% endapi-method-parameter %}
+#### URL
 
-{% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+`https://apptracking.retailrocket.net`**`/1.0/addToBasket`**
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Идентификатор пользователя
-{% endapi-method-parameter %}
+#### HTTP-метод
 
-{% api-method-parameter name="productId" type="integer" required=true %}
-Идентификатор товара
-{% endapi-method-parameter %}
+`POST`
 
-{% api-method-parameter name="stockId" type="string" required=false %}
-Идентификатор склада/региона с которого был просмотрен товар
-{% endapi-method-parameter %}
+#### Параметры строки запроса
 
-{% api-method-parameter name="timestamp" type="string" required=false %}
-Временная метка пользовательского события
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-запрос принят
-{% endapi-method-response-example-description %}
+#### HTTP-заголовки
 
-```text
-{}
-```
-{% endapi-method-response-example %}
+`Content-type: application/json`
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-ошибка в запросе, необходимо проверить правильность построения запроса
-{% endapi-method-response-example-description %}
+#### Тело запроса
 
-```text
-{}
-```
-{% endapi-method-response-example %}
+В теле запроса передается объект типа **`AddToBasketEvent`** со следующими полями:
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-ошибка аутентификации, проверьте корректность пары partnerId, ApiKey
-{% endapi-method-response-example-description %}
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
-```text
-{}
-```
-{% endapi-method-response-example %}
+#### Пример вызова
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-доступ запрещен
-{% endapi-method-response-example-description %}
-
-```text
-{}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-запрошенный ресурс не найден, необходимо проверить правильность URL
-{% endapi-method-response-example-description %}
-
-```text
-{}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-Пример вызова
-
-{% tabs %}
-{% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/addToBasket?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST "https://apptracking.retailrocket.net/1.0/addToBasket?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
    -H "Content-type: application/json" \
    --data "
       {
@@ -425,82 +173,97 @@ curl \
       }
    "
 ```
-{% endtab %}
-{% endtabs %}
 
-{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/order" %}
-{% api-method-summary %}
-order
-{% endapi-method-summary %}
+### Просмотр страницы категории товара
 
-{% api-method-description %}
-​Должен быть вызван при при покупки каждого товара. Если в заказе несколько товаров то метод должен быть вызван для каждого товара.
-{% endapi-method-description %}
+Должен быть вызван при просмотре страницы категори товаров
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации
-{% endapi-method-parameter %}
+#### URL
 
-{% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+`https://apptracking.retailrocket.net`**`/1.0/categoryView`**
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Идентификатор пользователя
-{% endapi-method-parameter %}
+#### HTTP-метод
 
-{% api-method-parameter name="productId" type="integer" required=true %}
-Идентификатор товара
-{% endapi-method-parameter %}
+`POST`
 
-{% api-method-parameter name="stockId" type="string" required=false %}
-Идентификатор склада/региона с которого был просмотрен товар
-{% endapi-method-parameter %}
+#### Параметры строки запроса
 
-{% api-method-parameter name="quantity" type="integer" required=true %}
-Кол-во купленных артиклов
-{% endapi-method-parameter %}
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 
-{% api-method-parameter name="price" type="number" required=true %}
-Цена с учетом скидок
-{% endapi-method-parameter %}
+#### HTTP-заголовки
 
-{% api-method-parameter name="transaction" type="string" required=true %}
-Идентификатор попкупки
-{% endapi-method-parameter %}
+`Content-type: application/json`
 
-{% api-method-parameter name="timestamp" type="string" required=false %}
-Временная метка пользовательского события
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+#### Тело запроса
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
+В теле запроса передается объект типа **`CategoryViewEvent`** со следующими полями:
 
-{% endapi-method-response-example-description %}
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `categoryView` | Да | integer | [Идентификатор категории товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
-```text
+#### Пример вызова
 
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-Пример вызова
-
-{% tabs %}
-{% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/order?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST "https://apptracking.retailrocket.net/1.0/categoryView?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"categoryView\": 123456,
+         \"stockId\": \"NewYork\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+      }
+   "
+```
+
+### Заказ товара
+
+​Должен быть вызван при для каждой товарной позиции в заказе.
+
+#### URL
+
+`https://apptracking.retailrocket.net`**`/1.0/order`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Тело запроса
+
+В теле запроса передается объект типа **`OrderEvent`** со следующими полями:
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `price` | Нет | string | Цена с учетом скидок |
+| `transaction` | Нет | string | Идентификатор попкупки |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST "https://apptracking.retailrocket.net/1.0/order?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
    -H "Content-type: application/json" \
    --data "
       {
@@ -514,238 +277,127 @@ curl \
       }
    "
 ```
-{% endtab %}
-{% endtabs %}
 
-{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/categoryView" %}
-{% api-method-summary %}
-categoryView
-{% endapi-method-summary %}
+### Поисковый запрос
 
-{% api-method-description %}
-Должен быть вызван при просмотре страницы категори товаров
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Идентификатор пользователя
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="categoryId" type="integer" required=true %}
-Идентификатор категории товара
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="timestamp" type="string" required=false %}
-Временная метка пользовательского события
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-Пример вызова
-
-{% tabs %}
-{% tab title="Bash" %}
-```bash
-curl \
-   -X POST https://apptracking.retailrocket.net/1.0/categoryView?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
-   -H "Content-type: application/json" \
-   --data "
-      {
-         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"categoryId\": 123456,
-         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
-      }
-   "
-```
-{% endtab %}
-{% endtabs %}
-
-{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/search" %}
-{% api-method-summary %}
-search
-{% endapi-method-summary %}
-
-{% api-method-description %}
 Должен быть вызван при вводе поисковой фразы на поисковой странице/экране интернет магазина.
-{% endapi-method-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации
-{% endapi-method-parameter %}
+#### URL
 
-{% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+`https://apptracking.retailrocket.net`**`/1.0/search`**
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Идентификатор пользователя
-{% endapi-method-parameter %}
+#### HTTP-метод
 
-{% api-method-parameter name="searchPhrase" type="string" required=true %}
-Поисковая фраза которую ввел пользователь
-{% endapi-method-parameter %}
+`POST`
 
-{% api-method-parameter name="timestamp" type="string" required=false %}
-Временная метка пользовательского события
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+#### Параметры строки запроса
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 
-{% endapi-method-response-example-description %}
+#### HTTP-заголовки
 
-```text
+`Content-type: application/json`
 
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+#### Тело запроса
 
-Пример вызова
+В теле запроса передается объект типа **`SearchEvent`** со следующими полями:
 
-{% tabs %}
-{% tab title="Bash" %}
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `searchPhrase` | Да | integer | Поисковая фраза которую ввел пользователь |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+
+#### Пример вызова
+
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/search?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST "https://apptracking.retailrocket.net/1.0/search?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
    -H "Content-type: application/json" \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"searchPhrase\": \"подгузник для новорожденных\",
+         \"categoryView\": 123456,
+         \"stockId\": \"NewYork\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
    "
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Пакетная загрузка пользовательского поведения
 
-API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий с временными метками.
+API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий.
 
-### Схема данных в теле запроса
+#### URL
 
-{% tabs %}
-{% tab title="JSON Scheme" %}
-```scheme
-{
-    "type" : "object",
-    "oneOf" :
-    [
-        {
-            "properties": {
-                "view:": {
-                    "type": "object"
-                }
-            }
-        }
-    ]
-}
-```
-{% endtab %}
-{% endtabs %}
+`https://apptracking.retailrocket.net`**`/1.0/visitorEvents`**
 
-{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/visitorEvents" %}
-{% api-method-summary %}
-visitorEvents
-{% endapi-method-summary %}
+#### HTTP-метод
 
-{% api-method-description %}
+`POST`
 
-{% endapi-method-description %}
+#### Параметры строки запроса
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации
-{% endapi-method-parameter %}
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 
-{% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+#### HTTP-заголовки
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="array" required=false %}
-В качестве тела запроса используется массив объектов пользовательских событий
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+`Content-type: application/json`
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
+#### Тело запроса
 
-{% endapi-method-response-example-description %}
+В теле запроса передается список пользовательских событий любого из следующих типов:
 
-```text
+**`ViewEventEnvelope`**
 
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `view` | Да | `ViewEvent` | Тип подробно описан в разделе "Просмотр карточки товара" как тип параметра тела запроса |
 
-### Пользовательские события
+**`GroupEventViewEnvelope`**
 
-#### View
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `groupView` | Да | `GroupViewEvent` | Тип подробно описан в разделе "Просмотр карточки группового товара" как тип параметра тела запроса |
 
-| Имя поля | Описание |
-| :--- | :--- |
-| view | Объект типа view, налогичный телу запроса метода view |
+**`AddToBasketEventEnvelope`**
 
-#### AddToBasket
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `addToBasket` | Да | `addToBasketEvent` | Тип подробно описан в разделе "Добавление товара в корзину" как тип параметра тела запроса |
 
-| Имя поля | Описание |
-| :--- | :--- |
-| addToBasket | Объект типа addToBasket, налогичный телу запроса метода addToBasket |
+**`OrderEventEnvelope`**
 
-#### Order
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `order` | Да | `OrderEvent` | Тип подробно описан в разделе "Заказ товара" как тип параметра тела запроса |
 
-### Пример вызова
+**`CategoryViewEventEnvelope`**
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `categoryView` | Да | `CategoryViewEvent` | Тип подробно описан в разделе "Просмотр страницы категории товара" как тип параметра тела запроса |
+
+**`SearchViewEventEnvelope`**
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `search` | Да | `SearchViewEvent` | Тип подробно описан в разделе "Просмотр страницы категории товара" как тип параметра тела запроса |
+
+**Пример вызова**
 
 {% tabs %}
 {% tab title="Bash" %}
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/visitorEvents?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST "https://apptracking.retailrocket.net/1.0/visitorEvents?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5" \
    -H "Content-type: application/json" \
    --data "
     [
