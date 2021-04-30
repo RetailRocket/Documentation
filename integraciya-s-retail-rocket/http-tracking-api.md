@@ -16,28 +16,19 @@ description: >-
 
 Все методы трекинг API имеют единый префикс часть URL
 
-[`https://apptracking.retailrocket.net/1.0/`](https://apptracking.retailrocket.net/1.0/)
+`https://apptracking.retailrocket.net/1.0/`
 
 ## **Методы трекинга поведения пользователя**
 
 Трекинг API придерживается [общих принципов интеграционных API](obshie-principy-integracii-s-retail-rocket.md).
 
-{% hint style="info" %}
-Более подробнее про параметры методов можно прочитать по их ссылкам:
-
-* [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) \(`apiKey`\)
-* [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) \(`sessionExternalId`\)
-* [Временная метка вызова](obshie-principy-integracii-s-retail-rocket.md#vremya-polzovatelskogo-sobytiya) \(`timestamp`\)
-* [Параметры товарных предложений](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) \(`stockId`, `productId`, `groupId`\)
-{% endhint %}
-
 ### Просмотр карточки товара
 
 Должен быть вызван при каждом просмотре карточки товара пользователем
 
-#### URL
+#### Path
 
-`https://apptracking.retailrocket.net`**`/1.0/view`**
+**`view`**
 
 #### HTTP-метод
 
@@ -85,9 +76,9 @@ curl \
 
 Должен быть вызван при каждом просмотре карточки товара на которой представлен групповой товар.
 
-#### URL
+#### Path
 
-`https://apptracking.retailrocket.net`**`/1.0/groupView`**
+**`groupView`**
 
 #### HTTP-метод
 
@@ -339,7 +330,7 @@ curl \
 
 ## Пакетная загрузка пользовательского поведения
 
-API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий с временными метками.
+API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий.
 
 #### URL
 
