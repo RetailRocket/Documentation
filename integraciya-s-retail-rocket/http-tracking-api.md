@@ -869,15 +869,15 @@ visitorEvents
 {% api-method-body-parameters %}
 
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
-
+Идентификатор пользователя
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="productId" type="string" required=false %}
-
+Идентификатор товара
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="productIds" type="string" required=false %}
-
+писок идентификаторов товаров
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="groupId" type="string" required=false %}
@@ -885,28 +885,29 @@ visitorEvents
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="stockId" type="string" required=false %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="quantity" type="string" required=false %}
-
+Идентификатор склада/региона с которого был просмотрен товар
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="searchPhrase" type="string" required=false %}
-
+Поисковая фраза которую ввел пользователь
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="categoryId" type="string" required=false %}
-
+Идентификатор категории товара
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="transaction" type="string" required=false %}
-
+Идентификатор попкупки
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="price" type="array" required=false %}
-Список пользовательских событий\(visitor event\)
+Цена с учетом скидок
 {% endapi-method-parameter %}
+
+{% api-method-parameter type="string" name="timestamp" %}
+Временная метка пользовательского события
+{% endapi-method-parameter %}
+
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
