@@ -685,7 +685,7 @@ visitorEvents
 
 | Имя поля | Описание |
 | :--- | :--- |
-| addToBasket | Объект типа view, налогичный телу запроса метода addToBasket |
+| addToBasket | Объект типа addToBasket, налогичный телу запроса метода addToBasket |
 
 #### Order
 
