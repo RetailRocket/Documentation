@@ -214,7 +214,7 @@ groupView
 Идентификатор товарной группы.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="productId" required=true type="array" %}
+{% api-method-parameter name="productIds" required=true type="array" %}
 Список идентификаторов товаров
 {% endapi-method-parameter %}
 
@@ -294,7 +294,7 @@ curl \
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
          \"groupView\": 654321,
-         \"productId\": [123456, 234567, 345678],
+         \"productIds\": [123456, 234567, 345678],
          \"stockId\": \"NewYork\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
@@ -867,7 +867,6 @@ visitorEvents
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
-
 {% api-method-parameter name="sessionExternalId" type="string" required=true %}
 Идентификатор пользователя
 {% endapi-method-parameter %}
@@ -907,7 +906,6 @@ visitorEvents
 {% api-method-parameter type="string" name="timestamp" %}
 Временная метка пользовательского события
 {% endapi-method-parameter %}
-
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -917,7 +915,7 @@ visitorEvents
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
