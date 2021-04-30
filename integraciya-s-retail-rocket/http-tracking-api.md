@@ -880,7 +880,7 @@ visitorEvents
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="groupId" type="string" required=false %}
-
+Идентификатор товарной группы.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="stockId" type="string" required=false %}
@@ -903,7 +903,7 @@ visitorEvents
 Цена с учетом скидок
 {% endapi-method-parameter %}
 
-{% api-method-parameter type="string" name="timestamp" %}
+{% api-method-parameter type="string" name="timestamp" required=true %}
 Временная метка пользовательского события
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
