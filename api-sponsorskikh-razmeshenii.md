@@ -43,7 +43,11 @@ description: >-
 
 ### Impression for AnyPlacement
 
-`GET /anyPlacements/{placementId}/impressions`
+#### Path
+`/anyPlacements/{placementId}/impressions`
+
+#### Http Method
+`GET`
 
 #### Параметры строки запроса
 
@@ -58,8 +62,11 @@ description: >-
 * [Impression](api-sponsorskikh-razmeshenii.md#impression)
 
 ### Impression for ProductPlacement
+#### Path
+`/productPlacements/{placementId}/impressions`
 
-`GET /productPlacements/{placementId}/impressions`
+#### Http Method
+`GET`
 
 #### Параметры строки запроса
 
@@ -77,8 +84,11 @@ description: >-
 * [Impression](api-sponsorskikh-razmeshenii.md#impression)
 
 ### Impression for ProductGroupPlacement
+#### Path
+`/productGroupsPlacements/{placementId}/impressions`
 
-`GET /productGroupsPlacements/{placementId}/impressions`
+#### Http Method
+`GET`
 
 #### Параметры строки запроса
 
@@ -96,7 +106,11 @@ description: >-
 
 ### Impression for CategoryPlacement
 
-`GET /categoryPlacements/{placementId}/impressions`
+#### Path
+`/categoryPlacements/{placementId}/impressions`
+
+#### Http Method
+`GET`
 
 #### Параметры строки запроса
 
@@ -113,7 +127,12 @@ description: >-
 
 ### Impression for SearchPlacement
 
-`GET /searchPlacements/{placementId}/impressions`
+
+#### Path
+`/searchPlacements/{placementId}/impressions`
+
+#### Http Method
+`GET`
 
 #### Параметры строки запроса
 
