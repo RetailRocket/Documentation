@@ -41,7 +41,7 @@ description: >-
 
 ## Resources
 
-### Impression for AnyPlacement
+### Спонсорский контент для прочих страниц/экранов
 
 #### Path
 
@@ -76,7 +76,7 @@ description: >-
 curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/anyPlacements/2e1f1f39-bad1-46a4-9488-c075dd95dc9b/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string'
 ```
 
-### Impression for ProductPlacement
+### Спонсорский контент для товарных страниц/экранов
 
 #### Path
 
@@ -113,7 +113,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productPlacements/a2837ec9-b000-46d7-9272-f64df080da51/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productId=93845&stockId=berlin13'
 ```
 
-### Impression for ProductGroupPlacement
+### Спонсорский контент для страниц/экранов груповых товаров
 
 #### Path
 
@@ -150,7 +150,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productGroupsPlacements/545f2f85-dcbe-4d2d-8260-6ecdf6c8c415/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productIds=93845,93846,93847&stockId=berlin13'
 ```
 
-### Impression for CategoryPlacement
+### Спонсорский контент для страниц/экранов товарных категорий
 
 #### Path
 
@@ -186,7 +186,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/categoryPlacements/b17d8910-d0c5-4fd7-97d0-66b314f797f2/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&categoryId=65'
 ```
 
-### Impression for SearchPlacement
+### Спонсорский контент для страницы/экрана поиска
 
 #### Path
 
