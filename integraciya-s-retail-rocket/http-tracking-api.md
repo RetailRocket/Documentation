@@ -132,6 +132,155 @@ curl \
       }
    "
 ```
+### Добавление товара в корзину
+
+Должен быть вызван при каждом добавление товара в корзину.
+
+#### URL
+
+`https://apptracking.retailrocket.net`**`/1.0/addToBasket`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Тело запроса
+
+В теле запроса передается объект типа **`view`** со следующими полями:
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST 'https://apptracking.retailrocket.net/1.0/addToBasket?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5' \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"productId\": 123456,
+         \"stockId\": \"NewYork\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+      }
+   "
+```
+
+### Добавление страницы категории товара
+
+Должен быть вызван при просмотре страницы категори товаров
+
+#### URL
+
+`https://apptracking.retailrocket.net`**`/1.0/categoryView`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Тело запроса
+
+В теле запроса передается объект типа **`view`** со следующими полями:
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `categoryView` | Да | integer | [Идентификатор категории товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST 'https://apptracking.retailrocket.net/1.0/categoryView?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5' \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"categoryView\": 123456,
+         \"stockId\": \"NewYork\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+      }
+   "
+```
+
+### Поисковый запрос
+
+Должен быть вызван при вводе поисковой фразы на поисковой странице/экране интернет магазина.
+
+#### URL
+
+`https://apptracking.retailrocket.net`**`/1.0/categoryView`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Тело запроса
+
+В теле запроса передается объект типа **`view`** со следующими полями:
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `searchPhrase` | Да | integer | Поисковая фраза которую ввел пользователь |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST 'https://apptracking.retailrocket.net/1.0/categoryView?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5' \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"categoryView\": 123456,
+         \"stockId\": \"NewYork\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+      }
+   "
+```
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
 {% api-method-summary %}
@@ -706,6 +855,9 @@ curl \
 ```
 {% endtab %}
 {% endtabs %}
+
+
+
 
 ## Пакетная загрузка пользовательского поведения
 
