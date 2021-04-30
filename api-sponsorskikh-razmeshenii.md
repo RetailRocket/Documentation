@@ -50,7 +50,7 @@ description: >-
 |Имя поля           |Обязательное|Тип|Описание|
 |-------------------|---|------------|--------|
 |`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
-|`acceptContent`    |Да |string      |[Типы содержимого, которые площадка готова разместить](#acceptcontent)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
 |`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
 
 #### **Тип ответа**
@@ -63,11 +63,14 @@ description: >-
 
 #### Параметры строки запроса
 
-* `sessionExternalId`
-* `productId`
-* `acceptContent`
-* `apiKey`
-* `stockId` \(необязательный параметр\)
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+|`productId`        |Да |integer     |Идентификатор товара, в контексте которого находится пользователь|
+|`stockId`          |Нет|string      |Идентификатор склада, в контексте которого находится пользователь|
+
 
 #### **Тип ответа**
 
@@ -79,11 +82,13 @@ description: >-
 
 #### Параметры строки запроса
 
-* `sessionExternalId`
-* `productIds`\(строка, состоящая из `productId` через запятую\)
-* `acceptContent`
-* `apiKey`
-* `stockId` \(необязательный параметр\)
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+|`productIds`       |Да |string      |Идентификаторы товаров, которые вхояд в некоторую группу (например корзину), перечисленные через запятую|
+|`stockId`          |Нет|string      |Идентификатор склада, в контексте которого находится пользователь|
 
 #### **Тип ответа**
 
@@ -95,10 +100,12 @@ description: >-
 
 #### Параметры строки запроса
 
-* `sessionExternalId`
-* `categoryId`
-* `acceptContent`
-* `apiKey`
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+|`categoryId`       |Да |integer     |Идентификатор категории, в контексте которой находится пользователь|
 
 #### **Тип ответа**
 
@@ -110,10 +117,13 @@ description: >-
 
 #### Параметры строки запроса
 
-* `sessionExternalId`
-* `searchQuery`
-* `acceptContent`
-* `apiKey`
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+|`searchQuery`      |Да |string      |Поисковый запрос, который ввел пользователь|
+
 
 #### **Тип ответа**
 
