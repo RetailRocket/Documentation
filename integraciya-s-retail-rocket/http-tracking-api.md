@@ -326,6 +326,102 @@ curl \
    "
 ```
 
+### Просмотр спонсорского контента
+
+Должен быть вызван при каждом просмотре пользователем спонсорсокого контента
+
+#### Path
+
+**`impressionContentViewed`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Тело запроса
+
+В теле запроса передается объект типа **`ImpressionContentViewedEvent`** со следующими полями:
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `impressionContentId` | Да | string | Идентификатор спонсорсокого контента |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST "https://apptracking.retailrocket.net/1.0/impressionContentViewed?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"impressionContentId\": \"подгузник для новорожденных\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+      }
+   "
+```
+
+### Клик по спонсорскому контенту
+
+Должен быть вызван при каждом клике пользователя в спонсорский контент
+
+#### Path
+
+**impressionContentClicked`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Тело запроса
+
+В теле запроса передается объект типа **`ImpressionContentViewedEvent`** со следующими полями:
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `impressionContentId` | Да | string | Идентификатор спонсорсокого контента |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST "https://apptracking.retailrocket.net/1.0/impressionContentClicked?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"impressionContentId\": \"подгузник для новорожденных\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+      }
+   "
+```
+
 ## Пакетная загрузка пользовательского поведения
 
 API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий.
