@@ -120,12 +120,13 @@ curl \
 
 ```bash
 curl \
-   -X POST https://apptracking.retailrocket.net/1.0/view?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
+   -X POST https://apptracking.retailrocket.net/1.0/groupView?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
    -H "Content-type: application/json" \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"productId\": 123456,
+         \"groupView\": 654321,
+         \"productIds\": [123456, 234567, 345678],
          \"stockId\": \"NewYork\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
