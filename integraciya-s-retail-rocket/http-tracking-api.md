@@ -47,8 +47,8 @@ description: >-
 
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | Ключ авторизации |
-| `partnerId` | Да | string | Идентификатор интернет магазина |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 
 #### HTTP-заголовки
 
