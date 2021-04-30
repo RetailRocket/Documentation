@@ -185,6 +185,42 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/searchPlacements/d34fa7a5-26fe-4cd4-af3f-a52362d90c80/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&searchQuery=Red%20Apples'
 ```
 
+### Спонсорский контент для прочих страниц/экранов
+
+#### Path
+
+`partners/{partnerId}/anyPlacements/{placementId}/impressions`
+
+#### Http Method
+
+`GET`
+
+#### Параметры пути запроса
+
+| Имя поля | Тип | Описание |
+| :--- | :--- | :--- |
+| `partnerId` | string | [Идентификатор интернет магазина](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#identifikator-internet-magazina) |
+| `placementId` | string | Идентификатор места размещения, выдается сотрудником Retail Rocket |
+
+#### Параметры строки запроса
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
+| `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить, через запятую |
+| `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
+
+#### **Тип ответа**
+
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
+
+#### Пример вызова
+
+```bash
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/anyPlacements/2e1f1f39-bad1-46a4-9488-c075dd95dc9b/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string'
+```
+
+
 ## Responses
 
 ### Impression
@@ -238,41 +274,6 @@ Cодержимое для показа товарной полки
         "productIds": [<product id>, <product id>]
     }
 }
-```
-
-### Спонсорский контент для прочих страниц/экранов
-
-#### Path
-
-`partners/{partnerId}/anyPlacements/{placementId}/impressions`
-
-#### Http Method
-
-`GET`
-
-#### Параметры пути запроса
-
-| Имя поля | Тип | Описание |
-| :--- | :--- | :--- |
-| `partnerId` | string | [Идентификатор интернет магазина](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#identifikator-internet-magazina) |
-| `placementId` | string | Идентификатор места размещения, выдается сотрудником Retail Rocket |
-
-#### Параметры строки запроса
-
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
-| `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить, через запятую |
-| `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
-
-#### **Тип ответа**
-
-* [Impression](api-sponsorskikh-razmeshenii.md#impression)
-
-#### Пример вызова
-
-```bash
-curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/anyPlacements/2e1f1f39-bad1-46a4-9488-c075dd95dc9b/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string'
 ```
 
 ## Status codes
