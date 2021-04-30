@@ -33,24 +33,53 @@ description: >-
 
 ### Просмотр карточки товара
 
+Должен быть вызван при каждом просмотре карточки товара пользователем
+
+#### URL
+
 `https://apptracking.retailrocket.net`**`/1.0/view`**
 
-Должен быть вызван при каждом просмотре карточки товара пользователем
+#### HTTP-метод
+
+`POST`
 
 #### Query Parameters
 
 | Имя параметра | Тип | Описание |
 | :--- | :--- | :--- |
-| apiKey | string | Ключ авторизации |
-| partnerId | string | Идентификатор интернет магазина |
+| `apiKey` | string | Ключ авторизации |
+| `partnerId` | string | Идентификатор интернет магазина |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
 
 #### Тело запроса
 
-В теле запроса передается объект типа view
+В теле запроса передается объект типа view со следующими полями:
 
+| Имя поля | Тип | Описание |
+| :--- | :--- | :--- |
+| `sessionExternalId` | string | Идентификатор пользователя |
+| `productId` | integer | Идентификатор товара |
+| `stockId` | string | Идентификатор склада к которому пренадлежит товар |
+| `timestamp` | string | Метка времени |
 
+#### Пример вызова
 
-
+```bash
+curl \
+   -X POST 'https://apptracking.retailrocket.net/1.0/view?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5' \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"productId\": 123456,
+         \"stockId\": \"NewYork\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+      }
+   "
+```
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
 {% api-method-summary %}
