@@ -132,6 +132,7 @@ curl \
       }
    "
 ```
+
 ### Добавление товара в корзину
 
 Должен быть вызван при каждом добавление товара в корзину.
@@ -238,7 +239,7 @@ curl \
 
 #### URL
 
-`https://apptracking.retailrocket.net`**`/1.0/categoryView`**
+`https://apptracking.retailrocket.net`**`/1.0/search`**
 
 #### HTTP-метод
 
@@ -270,7 +271,7 @@ curl \
 
 ```bash
 curl \
-   -X POST 'https://apptracking.retailrocket.net/1.0/categoryView?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5' \
+   -X POST 'https://apptracking.retailrocket.net/1.0/search?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5' \
    -H "Content-type: application/json" \
    --data "
       {
@@ -855,9 +856,6 @@ curl \
 ```
 {% endtab %}
 {% endtabs %}
-
-
-
 
 ## Пакетная загрузка пользовательского поведения
 
