@@ -4,7 +4,7 @@ description: >-
   контента.
 ---
 
-# API спонсорских размещений
+# API получения спонсорских размещений
 
 ## Термины
 
@@ -12,7 +12,7 @@ description: >-
 
 **Рекламодатель**: лицо/организация, которая заинтересована в том, чтобы показывать на рекламных площадках свое содержимое, чтобы достигать маркетинговые цели.
 
-**Содержимое для показа \(content\)**: объект произвольного состава, содержащий необходимые данные для показа пользователю рекламной площадки. Запрашивается рекламной площадкой у API Sponsored Products. Размещается рекламной площадкой с целью получить плату от рекламодателя за показ пользователю рекламной площадки.
+**Содержимое для показа \(content\)**: <a id="acceptcontent" name="acceptcontent"></a> объект произвольного состава, содержащий необходимые данные для показа пользователю рекламной площадки. Запрашивается рекламной площадкой у API спонсорских размещений. Показывается рекламной площадкой с целью получить плату от рекламодателя за просмотр этого сдержимого пользователем площадки.
 
 При запросе необходимо использовать параметр строки запроса `acceptContent` для указания типа содержимого, который рекламная площадка готова разместить.
 
@@ -23,110 +23,222 @@ description: >-
 
 Если рекламная площадка готова размещать более одного варианта содержимого, их можно указать через запятую, например: `acceptContent=string,productIds`
 
-**Рекламное место \(placement\)**: область страницы web приложения или экрана мобильного приложения рекламной площадки, предназначенная для продажи рекламодателю с помощью продукта Sponsored Products. Бывает разных типов в зависимости от вида места области размещения. Обладает идентификатором `placementId`. Присваивается исходя из перечня рекламных мест, предоставленных рекламной площадкой.
+**Рекламное место \(placement\)**: область страницы web приложения или экрана мобильного приложения рекламной площадки, предназначенная для размещения там платного содержимого. Бывает разных типов в зависимости от вида места области размещения.
+
+* **any placement  -** место размещения рекламы, которое может находится в любом разделе веб сайта или мобильного приложения
+* **product placement** - место размещения в контексте карточки товара
+* **category placement** - место размещения в контексте карточки категории
+* **search placement** - место размещения в контексте поисковой выдачи
+* **product group placement** - место размещения в контексте группы товаров, например это может быть корзина
 
 **Товар \(product\)**: позиция товарного каталога рекламной площадки. Обладает идентификатором `productId` типа 64 разрядное целое со знаком.
 
 **Категория \(category\)**: группа товаров, содержащая произвольный \(существенный для рекламной площадки\) признак. Обладает идентификатором `categoryId` типа 64 разрядное целое со знаком. Предоставляется рекламной площадкой.
 
-## Авторизация
-
-* Для авторизации необходимо во все запросы включать параметр `apiKey={apiKey}` типа строка длиной до 64 символов.
-* `apiKey` может измениться, это нужно учитывать при разработки интеграции, и хранить его в БД на сервере.
-* `apiKey` можно получить у аккаунт-менеджера.
-* В случае неуспешной авторизации \(неверный `apiKey`\) вернется статус `401`.
-
-## Управление сессией
-
-**Сессия**: набор данных, хранящий состояние пользователя рекламной площадки. Подробнее об этом написано тут.
-
 ## Base URL
 
-`https://visitors-sp.retailrocket.net/v1/partners/{partnerId}`
+`https://visitors-sp.retailrocket.net/v1/`
 
 ## Resources
 
 ### Impression for AnyPlacement
 
-`GET /anyPlacements/{placementId}/impressions`
+#### Path
+`partners/{partnerId}/anyPlacements/{placementId}/impressions`
+
+#### Http Method
+`GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
-* `session` или `sessionExternalId`
-* `acceptContent`
-* `apiKey`
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
 
-  **Тип ответа**
+#### **Тип ответа**
 
-  `impression`
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
+
+
+#### Пример вызова
+
+```bash
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/anyPlacements/2e1f1f39-bad1-46a4-9488-c075dd95dc9b/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string' 
+```
 
 ### Impression for ProductPlacement
+#### Path
+`partners/{partnerId}/productPlacements/{placementId}/impressions`
 
-`GET /productPlacements/{placementId}/impressions`
+#### Http Method
+`GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
-* `session` или `sessionExternalId`
-* `productId`
-* `acceptContent`
-* `apiKey`
-* `stockId` \(необязательный параметр\)
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+|`productId`        |Да |integer     |Идентификатор товара, в контексте которого находится пользователь|
+|`stockId`          |Нет|string      |Идентификатор склада, в контексте которого находится пользователь|
 
-  **Тип ответа**
 
-  `impression`
+#### **Тип ответа**
+
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
+
+#### Пример вызова
+
+```bash
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productPlacements/a2837ec9-b000-46d7-9272-f64df080da51/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productId=93845&stockId=berlin13' 
+```
 
 ### Impression for ProductGroupPlacement
+#### Path
+`partners/{partnerId}/productGroupsPlacements/{placementId}/impressions`
 
-`GET /productGroupsPlacements/{placementId}/impressions`
+#### Http Method
+`GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
-* `session` или `sessionExternalId`
-* `productIds`\(строка, состоящая из `productId` через запятую\)
-* `acceptContent`
-* `apiKey`
-* `stockId` \(необязательный параметр\)
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+|`productIds`       |Да |string      |Идентификаторы товаров, которые вхояд в некоторую группу (например корзину), перечисленные через запятую|
+|`stockId`          |Нет|string      |Идентификатор склада, в контексте которого находится пользователь|
 
-  **Тип ответа**
+#### **Тип ответа**
 
-  `impression`
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
+
+#### Пример вызова
+
+```bash
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productGroupsPlacements/545f2f85-dcbe-4d2d-8260-6ecdf6c8c415/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productIds=93845,93846,93847&stockId=berlin13' 
+```
 
 ### Impression for CategoryPlacement
 
-`GET /categoryPlacements/{placementId}/impressions`
+#### Path
+`partners/{partnerId}/categoryPlacements/{placementId}/impressions`
+
+#### Http Method
+`GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
-* `session` или `sessionExternalId`
-* `categoryId`
-* `acceptContent`
-* `apiKey`
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+|`categoryId`       |Да |integer     |Идентификатор категории, в контексте которой находится пользователь|
 
-  **Тип ответа**
+#### **Тип ответа**
 
-  `impression`
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
+
+#### Пример вызова
+
+```bash
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/categoryPlacements/b17d8910-d0c5-4fd7-97d0-66b314f797f2/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&categoryId=65' 
+```
 
 ### Impression for SearchPlacement
 
-`GET /searchPlacements/{placementId}/impressions`
+
+#### Path
+`partners/{partnerId}/searchPlacements/{placementId}/impressions`
+
+#### Http Method
+`GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
-* `session` или `sessionExternalId`
-* `searchQuery`
-* `acceptContent`
-* `apiKey`
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
+|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
+|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+|`searchQuery`      |Да |string      |Поисковый запрос, который ввел пользователь|
 
-  **Тип ответа**
 
-  `impression`
+#### **Тип ответа**
 
-## Response
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
+
+```bash
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/searchPlacements/d34fa7a5-26fe-4cd4-af3f-a52362d90c80/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&searchQuery=Red%20Apples'
+```
+
+## Responses
 
 ### Impression
 
-Объект типа Impression с полем `content` типа строка.
+Содержит данные для показа спонсорского содержимого.
+
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`id`|Да|string|Идентификатор запрошенного показа|
+|`content`|Да|StringImpressionContent or ProductIdsImpressionContent|Содержимое для показа|
+
+### StringImpressionContent
+
+Строковое содержимое для показа
+
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`id`|Да|string|Идентификатор содержимого|
+|`string`|Да|string|Произвольный текст|
+
+### ProductIdsImpressionContent
+
+Cодержимое для показа товарной полки
+
+|Имя поля           |Обязательное|Тип|Описание|
+|-------------------|---|------------|--------|
+|`id`|Да|string|Идентификатор содержимого|
+|`productIds`|Да|number array|Массив идентификаторов товаров для отображения|
+
+### Примеры
+
+Объект типа `Impression` с полем `content` типа строка.
 
 ```text
 {

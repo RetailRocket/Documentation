@@ -9,5 +9,5 @@
 
 ---
 
-* [API спонсорских размещений](api-sponsorskikh-razmeshenii.md)
+* [API получения спонсорских размещений](api-sponsorskikh-razmeshenii.md)
 
