@@ -37,17 +37,23 @@ description: >-
 
 ## Base URL
 
-`https://visitors-sp.retailrocket.net/v1/partners/{partnerId}`
+`https://visitors-sp.retailrocket.net/v1/`
 
 ## Resources
 
 ### Impression for AnyPlacement
 
 #### Path
-`/anyPlacements/{placementId}/impressions`
+`partners/{partnerId}/anyPlacements/{placementId}/impressions`
 
 #### Http Method
 `GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
@@ -63,10 +69,16 @@ description: >-
 
 ### Impression for ProductPlacement
 #### Path
-`/productPlacements/{placementId}/impressions`
+`partners/{partnerId}/productPlacements/{placementId}/impressions`
 
 #### Http Method
 `GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
@@ -85,10 +97,16 @@ description: >-
 
 ### Impression for ProductGroupPlacement
 #### Path
-`/productGroupsPlacements/{placementId}/impressions`
+`partners/{partnerId}/productGroupsPlacements/{placementId}/impressions`
 
 #### Http Method
 `GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
@@ -107,10 +125,16 @@ description: >-
 ### Impression for CategoryPlacement
 
 #### Path
-`/categoryPlacements/{placementId}/impressions`
+`partners/{partnerId}/categoryPlacements/{placementId}/impressions`
 
 #### Http Method
 `GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
@@ -129,10 +153,16 @@ description: >-
 
 
 #### Path
-`/searchPlacements/{placementId}/impressions`
+`partners/{partnerId}/searchPlacements/{placementId}/impressions`
 
 #### Http Method
 `GET`
+
+#### Параметры пути запроса
+|Имя поля           |Тип|Описание|
+|-------------------|---|--------|
+|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
+|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
 
 #### Параметры строки запроса
 
