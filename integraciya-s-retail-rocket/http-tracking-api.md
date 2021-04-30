@@ -143,45 +143,6 @@ curl \
    "
 ```
 {% endtab %}
-
-{% tab title="C\#" %}
-```csharp
-namespace App
-{
-    using System.Net.Http;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    class Program
-    {
-        static async Task Main()
-        {
-            var url = @"https://apptracking.retailrocket.net/1.0"
-                        + "/view?"
-                        + "&apiKey=608423a104249fa8e9952323"
-                        + "&partnerId=608423a9b126ac6ab3f8f0a5";
-
-            var jsonContent = @"
-            { 
-                ""sessionExternalId"": ""60842392e4881c65e6c5e423"",
-                ""productId"": 123456,
-                ""stockId"": ""NewYork"",
-                ""timestamp"": ""2018-09-15T15:53:00+00:00""
-            }";
-
-            using var client = new HttpClient();
-
-            await client.PostAsync(
-                requestUri: url,
-                content: new StringContent(
-                    content: jsonContent,
-                    Encoding.UTF8,
-                    mediaType: "application/json"));
-        }
-    }
-}
-```
-{% endtab %}
 {% endtabs %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/groupView" %}
@@ -301,46 +262,6 @@ curl \
    "
 ```
 {% endtab %}
-
-{% tab title="C\#" %}
-```csharp
-namespace App
-{
-    using System.Net.Http;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    class Program
-    {
-        static async Task Main()
-        {
-            var url = @"https://apptracking.retailrocket.net/1.0" 
-                    + "/groupView?"
-                    + "&apiKey=608423a104249fa8e9952323"
-                    + "&partnerId=608423a9b126ac6ab3f8f0a5";
-
-            var jsonContent = @"
-            { 
-                ""sessionExternalId"": ""60842392e4881c65e6c5e423"",
-                ""groupView"": 654321,
-                ""productId"": 123456,
-                ""stockId"": ""NewYork"",
-                ""timestamp"": ""2018-09-15T15:53:00+00:00""
-            }";
-
-            using var client = new HttpClient();
-
-            await client.PostAsync(
-                requestUri: url,
-                content: new StringContent(
-                    content: jsonContent,
-                    Encoding.UTF8,
-                    mediaType: "application/json"));
-        }
-    }
-}
-```
-{% endtab %}
 {% endtabs %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/addToBasket" %}
@@ -455,45 +376,6 @@ curl \
    "
 ```
 {% endtab %}
-
-{% tab title="C\#" %}
-```csharp
-namespace App
-{
-    using System.Net.Http;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    class Program
-    {
-        static async Task Main()
-        {
-            var url = @"https://apptracking.retailrocket.net/1.0"
-                        + "/addToBasket?"
-                        + "&apiKey=608423a104249fa8e9952323"
-                        + "&partnerId=608423a9b126ac6ab3f8f0a5";
-
-            var jsonContent = @"
-            { 
-                ""sessionExternalId"": ""60842392e4881c65e6c5e423"",
-                ""productId"": 123456,
-                ""stockId"": ""NewYork"",
-                ""timestamp"": ""2018-09-15T15:53:00+00:00""
-            }";
-
-            using var client = new HttpClient();
-
-            await client.PostAsync(
-                requestUri: url,
-                content: new StringContent(
-                    content: jsonContent,
-                    Encoding.UTF8,
-                    mediaType: "application/json"));
-        }
-    }
-}
-```
-{% endtab %}
 {% endtabs %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/order" %}
@@ -583,48 +465,6 @@ curl \
    "
 ```
 {% endtab %}
-
-{% tab title="C\#" %}
-```csharp
-namespace App
-{
-    using System.Net.Http;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    class Program
-    {
-        static async Task Main()
-        {
-            var url = @"https://apptracking.retailrocket.net/1.0"
-                        + "/addToBasket?"
-                        + "&apiKey=608423a104249fa8e9952323"
-                        + "&partnerId=608423a9b126ac6ab3f8f0a5";
-
-            var jsonContent = @"
-            { 
-                ""sessionExternalId"": ""60842392e4881c65e6c5e423"",
-                ""productId"": 123456,
-                ""stockId"": ""NewYork"",
-                ""quantity"": 2,
-                ""price"": 234,
-                ""transaction"": ""135243"",
-                ""timestamp"": ""2018-09-15T15:53:00+00:00""
-            }";
-
-            using var client = new HttpClient();
-
-            await client.PostAsync(
-                requestUri: url,
-                content: new StringContent(
-                    content: jsonContent,
-                    Encoding.UTF8,
-                    mediaType: "application/json"));
-        }
-    }
-}
-```
-{% endtab %}
 {% endtabs %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/categoryView" %}
@@ -692,44 +532,6 @@ curl \
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
    "
-```
-{% endtab %}
-
-{% tab title="C\#" %}
-```csharp
-namespace App
-{
-    using System.Net.Http;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    class Program
-    {
-        static async Task Main()
-        {
-            var url = @"https://apptracking.retailrocket.net/1.0"
-                        + "/categoryView?"
-                        + "&apiKey=608423a104249fa8e9952323"
-                        + "&partnerId=608423a9b126ac6ab3f8f0a5";
-
-            var jsonContent = @"
-            { 
-                ""sessionExternalId"": ""60842392e4881c65e6c5e423"",
-                ""categoryId"": 123456,
-                ""timestamp"": ""2018-09-15T15:53:00+00:00""
-            }";
-
-            using var client = new HttpClient();
-
-            await client.PostAsync(
-                requestUri: url,
-                content: new StringContent(
-                    content: jsonContent,
-                    Encoding.UTF8,
-                    mediaType: "application/json"));
-        }
-    }
-}
 ```
 {% endtab %}
 {% endtabs %}
@@ -801,49 +603,33 @@ curl \
    "
 ```
 {% endtab %}
-
-{% tab title="C\#" %}
-```csharp
-namespace App
-{
-    using System.Net.Http;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    class Program
-    {
-        static async Task Main()
-        {
-            var url = @"https://apptracking.retailrocket.net/1.0"
-                        + "/search?"
-                        + "&apiKey=608423a104249fa8e9952323"
-                        + "&partnerId=608423a9b126ac6ab3f8f0a5";
-
-            var jsonContent = @"
-            { 
-                ""sessionExternalId"": ""60842392e4881c65e6c5e423"",
-                ""searchPhrase"": ""pampers"",
-                ""timestamp"": ""2018-09-15T15:53:00+00:00""
-            }";
-
-            using var client = new HttpClient();
-
-            await client.PostAsync(
-                requestUri: url,
-                content: new StringContent(
-                    content: jsonContent,
-                    Encoding.UTF8,
-                    mediaType: "application/json"));
-        }
-    }
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ## Пакетная загрузка пользовательского поведения
 
-API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий с временными метками.
+API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий с временными метками. 
+
+### Схема данных в теле запроса
+
+{% tabs %}
+{% tab title="JSON Scheme" %}
+```scheme
+{
+    "type" : "object",
+    "oneOf" :
+    [
+        {
+            "properties": {
+                "view:": {
+                    "type": "object"
+                }
+            }
+        }
+    ]
+}
+```
+{% endtab %}
+{% endtabs %}
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/visitorEvents" %}
 {% api-method-summary %}
@@ -867,44 +653,8 @@ visitorEvents
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="sessionExternalId" type="string" required=true %}
-Идентификатор пользователя
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="productId" type="string" required=false %}
-Идентификатор товара
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="productIds" type="string" required=false %}
-писок идентификаторов товаров
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="groupId" type="string" required=false %}
-Идентификатор товарной группы.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="stockId" type="string" required=false %}
-Идентификатор склада/региона с которого был просмотрен товар
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="searchPhrase" type="string" required=false %}
-Поисковая фраза которую ввел пользователь
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="categoryId" type="string" required=false %}
-Идентификатор категории товара
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="transaction" type="string" required=false %}
-Идентификатор попкупки
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="price" type="array" required=false %}
-Цена с учетом скидок
-{% endapi-method-parameter %}
-
-{% api-method-parameter type="string" name="timestamp" required=true %}
-Временная метка пользовательского события
+{% api-method-parameter name="body" type="array" required=false %}
+В качестве тела запроса используется массив объектов пользовательских событий
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -923,6 +673,26 @@ visitorEvents
 {% endapi-method-spec %}
 {% endapi-method %}
 
+### Пользовательские события
+
+#### View
+
+| Имя поля | Описание |
+| :--- | :--- |
+| view | Объект типа view, налогичный телу запроса метода view |
+
+#### AddToBasket
+
+| Имя поля | Описание |
+| :--- | :--- |
+| addToBasket | Объект типа view, налогичный телу запроса метода addToBasket |
+
+#### Order
+
+### Пример вызова
+
+{% tabs %}
+{% tab title="Bash" %}
 ```bash
 curl \
    -X POST https://apptracking.retailrocket.net/1.0/visitorEvents?apiKey=608423a104249fa8e9952323'&'partnerId=608423a9b126ac6ab3f8f0a5 \
@@ -982,6 +752,8 @@ curl \
     ]
 "
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Время ответа
 
