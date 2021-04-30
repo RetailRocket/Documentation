@@ -126,9 +126,9 @@ curl \
 
 Должен быть вызван при каждом добавление товара в корзину.
 
-#### URL
+#### Path
 
-`https://apptracking.retailrocket.net`**`/1.0/addToBasket`**
+**`addToBasket`**
 
 #### HTTP-метод
 
@@ -176,9 +176,9 @@ curl \
 
 Должен быть вызван при просмотре страницы категори товаров
 
-#### URL
+#### Path
 
-`https://apptracking.retailrocket.net`**`/1.0/categoryView`**
+**`categoryView`**
 
 #### HTTP-метод
 
@@ -225,9 +225,9 @@ curl \
 
 ​Должен быть вызван при для каждой товарной позиции в заказе.
 
-#### URL
+#### Path
 
-`https://apptracking.retailrocket.net`**`/1.0/order`**
+**`order`**
 
 #### HTTP-метод
 
@@ -280,9 +280,9 @@ curl \
 
 Должен быть вызван при вводе поисковой фразы на поисковой странице/экране интернет магазина.
 
-#### URL
+#### Path
 
-`https://apptracking.retailrocket.net`**`/1.0/search`**
+**`search`**
 
 #### HTTP-метод
 
@@ -330,9 +330,9 @@ curl \
 
 API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий.
 
-#### URL
+#### Path
 
-`https://apptracking.retailrocket.net`**`/1.0/visitorEvents`**
+**`visitorEvents`**
 
 #### HTTP-метод
 
