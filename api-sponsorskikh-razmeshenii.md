@@ -12,7 +12,7 @@ description: >-
 
 **Рекламодатель**: лицо/организация, которая заинтересована в том, чтобы показывать на рекламных площадках свое содержимое, чтобы достигать маркетинговые цели.
 
-**Содержимое для показа \(content\)**: <a id="acceptcontent" name="acceptcontent"></a> объект произвольного состава, содержащий необходимые данные для показа пользователю рекламной площадки. Запрашивается рекламной площадкой у API спонсорских размещений. Показывается рекламной площадкой с целью получить плату от рекламодателя за просмотр этого сдержимого пользователем площадки.
+**Содержимое для показа \(content\)**:  объект произвольного состава, содержащий необходимые данные для показа пользователю рекламной площадки. Запрашивается рекламной площадкой у API спонсорских размещений. Показывается рекламной площадкой с целью получить плату от рекламодателя за просмотр этого сдержимого пользователем площадки.
 
 При запросе необходимо использовать параметр строки запроса `acceptContent` для указания типа содержимого, который рекламная площадка готова разместить.
 
@@ -35,7 +35,7 @@ description: >-
 
 **Категория \(category\)**: группа товаров, содержащая произвольный \(существенный для рекламной площадки\) признак. Обладает идентификатором `categoryId` типа 64 разрядное целое со знаком. Предоставляется рекламной площадкой.
 
-## Base URL
+## Base URL <a id="acceptcontent"></a>
 
 `https://visitors-sp.retailrocket.net/v1/`
 
@@ -44,59 +44,64 @@ description: >-
 ### Impression for AnyPlacement
 
 #### Path
+
 `partners/{partnerId}/anyPlacements/{placementId}/impressions`
 
 #### Http Method
+
 `GET`
 
 #### Параметры пути запроса
-|Имя поля           |Тип|Описание|
-|-------------------|---|--------|
-|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
-|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
+
+| Имя поля | Тип | Описание |
+| :--- | :--- | :--- |
+| `partnerId` | string | [Идентификатор интернет магазина](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#identifikator-internet-magazina) |
+| `placementId` | string | Идентификатор места размещения, выдается сотрудником Retail Rocket |
 
 #### Параметры строки запроса
 
-|Имя поля           |Обязательное|Тип|Описание|
-|-------------------|---|------------|--------|
-|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
-|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
-|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
+| `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить, через запятую |
+| `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
 
 #### **Тип ответа**
 
 * [Impression](api-sponsorskikh-razmeshenii.md#impression)
 
-
 #### Пример вызова
 
 ```bash
-curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/anyPlacements/2e1f1f39-bad1-46a4-9488-c075dd95dc9b/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string' 
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/anyPlacements/2e1f1f39-bad1-46a4-9488-c075dd95dc9b/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string'
 ```
 
 ### Impression for ProductPlacement
+
 #### Path
+
 `partners/{partnerId}/productPlacements/{placementId}/impressions`
 
 #### Http Method
+
 `GET`
 
 #### Параметры пути запроса
-|Имя поля           |Тип|Описание|
-|-------------------|---|--------|
-|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
-|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
+
+| Имя поля | Тип | Описание |
+| :--- | :--- | :--- |
+| `partnerId` | string | [Идентификатор интернет магазина](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#identifikator-internet-magazina) |
+| `placementId` | string | Идентификатор места размещения, выдается сотрудником Retail Rocket |
 
 #### Параметры строки запроса
 
-|Имя поля           |Обязательное|Тип|Описание|
-|-------------------|---|------------|--------|
-|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
-|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
-|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
-|`productId`        |Да |integer     |Идентификатор товара, в контексте которого находится пользователь|
-|`stockId`          |Нет|string      |Идентификатор склада, в контексте которого находится пользователь|
-
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
+| `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить, через запятую |
+| `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
+| `productId` | Да | integer | Идентификатор товара, в контексте которого находится пользователь |
+| `stockId` | Нет | string | Идентификатор склада, в контексте которого находится пользователь |
 
 #### **Тип ответа**
 
@@ -105,31 +110,35 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Пример вызова
 
 ```bash
-curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productPlacements/a2837ec9-b000-46d7-9272-f64df080da51/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productId=93845&stockId=berlin13' 
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productPlacements/a2837ec9-b000-46d7-9272-f64df080da51/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productId=93845&stockId=berlin13'
 ```
 
 ### Impression for ProductGroupPlacement
+
 #### Path
+
 `partners/{partnerId}/productGroupsPlacements/{placementId}/impressions`
 
 #### Http Method
+
 `GET`
 
 #### Параметры пути запроса
-|Имя поля           |Тип|Описание|
-|-------------------|---|--------|
-|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
-|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
+
+| Имя поля | Тип | Описание |
+| :--- | :--- | :--- |
+| `partnerId` | string | [Идентификатор интернет магазина](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#identifikator-internet-magazina) |
+| `placementId` | string | Идентификатор места размещения, выдается сотрудником Retail Rocket |
 
 #### Параметры строки запроса
 
-|Имя поля           |Обязательное|Тип|Описание|
-|-------------------|---|------------|--------|
-|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
-|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
-|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
-|`productIds`       |Да |string      |Идентификаторы товаров, которые вхояд в некоторую группу (например корзину), перечисленные через запятую|
-|`stockId`          |Нет|string      |Идентификатор склада, в контексте которого находится пользователь|
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
+| `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить, через запятую |
+| `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
+| `productIds` | Да | string | Идентификаторы товаров, которые вхояд в некоторую группу \(например корзину\), перечисленные через запятую |
+| `stockId` | Нет | string | Идентификатор склада, в контексте которого находится пользователь |
 
 #### **Тип ответа**
 
@@ -138,31 +147,34 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Пример вызова
 
 ```bash
-curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productGroupsPlacements/545f2f85-dcbe-4d2d-8260-6ecdf6c8c415/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productIds=93845,93846,93847&stockId=berlin13' 
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productGroupsPlacements/545f2f85-dcbe-4d2d-8260-6ecdf6c8c415/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productIds=93845,93846,93847&stockId=berlin13'
 ```
 
 ### Impression for CategoryPlacement
 
 #### Path
+
 `partners/{partnerId}/categoryPlacements/{placementId}/impressions`
 
 #### Http Method
+
 `GET`
 
 #### Параметры пути запроса
-|Имя поля           |Тип|Описание|
-|-------------------|---|--------|
-|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
-|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
+
+| Имя поля | Тип | Описание |
+| :--- | :--- | :--- |
+| `partnerId` | string | [Идентификатор интернет магазина](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#identifikator-internet-magazina) |
+| `placementId` | string | Идентификатор места размещения, выдается сотрудником Retail Rocket |
 
 #### Параметры строки запроса
 
-|Имя поля           |Обязательное|Тип|Описание|
-|-------------------|---|------------|--------|
-|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
-|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
-|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
-|`categoryId`       |Да |integer     |Идентификатор категории, в контексте которой находится пользователь|
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
+| `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить, через запятую |
+| `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
+| `categoryId` | Да | integer | Идентификатор категории, в контексте которой находится пользователь |
 
 #### **Тип ответа**
 
@@ -171,33 +183,34 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Пример вызова
 
 ```bash
-curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/categoryPlacements/b17d8910-d0c5-4fd7-97d0-66b314f797f2/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&categoryId=65' 
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/categoryPlacements/b17d8910-d0c5-4fd7-97d0-66b314f797f2/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&categoryId=65'
 ```
 
 ### Impression for SearchPlacement
 
-
 #### Path
+
 `partners/{partnerId}/searchPlacements/{placementId}/impressions`
 
 #### Http Method
+
 `GET`
 
 #### Параметры пути запроса
-|Имя поля           |Тип|Описание|
-|-------------------|---|--------|
-|`partnerId`|string|[Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina)|
-|`placementId`|string|Идентификатор места размещения, выдается сотрудником Retail Rocket|
+
+| Имя поля | Тип | Описание |
+| :--- | :--- | :--- |
+| `partnerId` | string | [Идентификатор интернет магазина](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#identifikator-internet-magazina) |
+| `placementId` | string | Идентификатор места размещения, выдается сотрудником Retail Rocket |
 
 #### Параметры строки запроса
 
-|Имя поля           |Обязательное|Тип|Описание|
-|-------------------|---|------------|--------|
-|`sessionExternalId`|Да |string      |[Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)|
-|`acceptContent`    |Да |string      |Типы содержимого, которые площадка готова разместить, через запятую|
-|`apiKey`           |Да |string      |[Ключ авторизации](obshie-principy-integracii-s-retail-rocket#avtorizaciya)        |
-|`searchQuery`      |Да |string      |Поисковый запрос, который ввел пользователь|
-
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
+| `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить, через запятую |
+| `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
+| `searchQuery` | Да | string | Поисковый запрос, который ввел пользователь |
 
 #### **Тип ответа**
 
@@ -213,28 +226,28 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 
 Содержит данные для показа спонсорского содержимого.
 
-|Имя поля           |Обязательное|Тип|Описание|
-|-------------------|---|------------|--------|
-|`id`|Да|string|Идентификатор запрошенного показа|
-|`content`|Да|StringImpressionContent or ProductIdsImpressionContent|Содержимое для показа|
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `id` | Да | string | Идентификатор запрошенного показа |
+| `content` | Да | StringImpressionContent or ProductIdsImpressionContent | Содержимое для показа |
 
 ### StringImpressionContent
 
 Строковое содержимое для показа
 
-|Имя поля           |Обязательное|Тип|Описание|
-|-------------------|---|------------|--------|
-|`id`|Да|string|Идентификатор содержимого|
-|`string`|Да|string|Произвольный текст|
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `id` | Да | string | Идентификатор содержимого |
+| `string` | Да | string | Произвольный текст |
 
 ### ProductIdsImpressionContent
 
 Cодержимое для показа товарной полки
 
-|Имя поля           |Обязательное|Тип|Описание|
-|-------------------|---|------------|--------|
-|`id`|Да|string|Идентификатор содержимого|
-|`productIds`|Да|number array|Массив идентификаторов товаров для отображения|
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `id` | Да | string | Идентификатор содержимого |
+| `productIds` | Да | number array | Массив идентификаторов товаров для отображения |
 
 ### Примеры
 
