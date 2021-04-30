@@ -110,11 +110,11 @@ curl \
 
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | Идентификатор пользователя |
-| `groupId` | Да | integer | Идентификатор товарной группы |
-| `productIds` | Да | integer | Список идентификаторов товаров |
-| `stockId` | Нет | string | Идентификатор склада к которому пренадлежит товар |
-| `timestamp` | Да | string | Метка времени |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `groupId` | Да | integer | [Идентификатор товарной группы](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `productIds` | Да | integer | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
 
