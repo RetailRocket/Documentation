@@ -60,10 +60,10 @@ description: >-
 
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | Идентификатор пользователя |
-| `productId` | Да | integer | Идентификатор товара |
-| `stockId` | Нет | string | Идентификатор склада к которому пренадлежит товар |
-| `timestamp` | Да | string | Метка времени |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
 
@@ -709,7 +709,7 @@ curl \
 
 ## Пакетная загрузка пользовательского поведения
 
-API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий с временными метками.
+API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий с временными метками. 
 
 ### Схема данных в теле запроса
 
