@@ -867,7 +867,43 @@ visitorEvents
 {% endapi-method-query-parameters %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="array" required=false %}
+{% api-method-parameter name="searchPhrase" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="categoryId" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="transaction" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="sessionExternalId" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="productId" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="productIds" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="groupId" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="stockId" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="quantity" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="price" type="array" required=false %}
 Список пользовательских событий\(visitor event\)
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
