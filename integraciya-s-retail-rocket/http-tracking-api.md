@@ -337,36 +337,25 @@ curl \
    "
 ```
 
-
 ## Пакетная загрузка пользовательского поведения
 
 API предоставляет возможно пакетной загрузки пользовательского поведения. В теле вызова метода передается список пользовательских событий с временными метками.
 
-### Схема данных в теле запроса
+#### URL
 
-{% tabs %}
-{% tab title="JSON Scheme" %}
-```scheme
-{
-    "type" : "object",
-    "oneOf" :
-    [
-        {
-            "properties": {
-                "view:": {
-                    "type": "object"
-                }
-            }
-        }
-    ]
-}
-```
-{% endtab %}
-{% endtabs %}
+`https://apptracking.retailrocket.net`**`/1.0/visitorEvents`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+
 
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/visitorEvents" %}
 {% api-method-summary %}
-visitorEvents
+
 {% endapi-method-summary %}
 
 {% api-method-description %}
