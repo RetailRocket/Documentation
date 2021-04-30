@@ -157,7 +157,7 @@ description: >-
 |Имя поля           |Обязательное|Тип|Описание|
 |-------------------|---|------------|--------|
 |`id`|Да|string|Идентификатор запрошенного показа|
-|`content`|Да|StringImpressionContent|ProductIdsImpressionContent|Содержимое для показа|
+|`content`|Да|StringImpressionContent/ProductIdsImpressionContent|Содержимое для показа|
 
 ### StringImpressionContent
 
