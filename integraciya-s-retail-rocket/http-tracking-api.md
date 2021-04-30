@@ -368,7 +368,7 @@ curl \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"impressionContentId\": \"подгузник для новорожденных\",
+         \"impressionContentId\": \"568da4f6-7952-49b1-afd3-9ac44d6e78c7\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
    "
@@ -380,7 +380,7 @@ curl \
 
 #### Path
 
-**impressionContentClicked`**
+**impressionContentClicked\`**
 
 #### HTTP-метод
 
@@ -416,7 +416,7 @@ curl \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"impressionContentId\": \"подгузник для новорожденных\",
+         \"impressionContentId\": \"568da4f6-7952-49b1-afd3-9ac44d6e78c7\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
    "
