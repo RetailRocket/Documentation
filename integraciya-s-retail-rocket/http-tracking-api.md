@@ -351,7 +351,6 @@ API предоставляет возможно пакетной загрузк�
 
 #### Параметры строки запроса
 
-
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
@@ -363,73 +362,19 @@ API предоставляет возможно пакетной загрузк�
 
 #### Тело запроса
 
-В теле запроса передается список пользовательских событий любого из следующих типов
+В теле запроса передается список пользовательских событий любого из следующих типов:
 
-ViewEnvelope
+**`ViewEnvelope`**
+
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| View | Да | ViewEvent | Тип подробно описан в разделе "Просмотр карточки товара"
+| `view` | Да | `ViewEvent` | Тип подробно описан в разделе "Просмотр карточки товара" как тип параметра тела запроса |
 
-GroupViewEnvelope
+**`GroupViewEnvelope`**
+
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| GroupView | Да | GroupViewEvent | Тип подробно описан в разделе "Просмотр карточки группового товара"
-
-{% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/visitorEvents" %}
-{% api-method-summary %}
-
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
-Ключ авторизации
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="partnerId" type="string" required=true %}
-Идентификатор интернет магазина
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="array" required=false %}
-В качестве тела запроса используется массив объектов пользовательских событий
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-### Пользовательские события
-
-#### View
-
-| Имя поля | Описание |
-| :--- | :--- |
-| view | Объект типа view, налогичный телу запроса метода view |
-
-#### AddToBasket
-
-| Имя поля | Описание |
-| :--- | :--- |
-| addToBasket | Объект типа addToBasket, налогичный телу запроса метода addToBasket |
+| `groupView` | Да | `GroupViewEvent` | Тип подробно описан в разделе "Просмотр карточки группового товара" как тип параметра тела запроса |
 
 #### Order
 
