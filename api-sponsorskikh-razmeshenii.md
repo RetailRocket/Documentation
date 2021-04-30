@@ -53,7 +53,7 @@ description: >-
 
 #### **Тип ответа**
 
-#### \*\*\*\*[impression](api-sponsorskikh-razmeshenii.md#impression)
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
 
 ### Impression for ProductPlacement
 
@@ -67,9 +67,9 @@ description: >-
 * `apiKey`
 * `stockId` \(необязательный параметр\)
 
-  **Тип ответа**
+#### **Тип ответа**
 
-  `impression`
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
 
 ### Impression for ProductGroupPlacement
 
@@ -83,9 +83,9 @@ description: >-
 * `apiKey`
 * `stockId` \(необязательный параметр\)
 
-  **Тип ответа**
+#### **Тип ответа**
 
-  `impression`
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
 
 ### Impression for CategoryPlacement
 
@@ -100,7 +100,7 @@ description: >-
 
 #### **Тип ответа**
 
-`impression`
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
 
 ### Impression for SearchPlacement
 
@@ -115,9 +115,9 @@ description: >-
 
 #### **Тип ответа**
 
-`impression`
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
 
-## Response
+## Responses
 
 ### Impression
 
