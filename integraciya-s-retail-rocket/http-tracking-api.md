@@ -31,6 +31,27 @@ description: >-
 * [Параметры товарных предложений](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) \(`stockId`, `productId`, `groupId`\)
 {% endhint %}
 
+### Просмотр карточки товара
+
+`https://apptracking.retailrocket.net`**`/1.0/view`**
+
+Должен быть вызван при каждом просмотре карточки товара пользователем
+
+#### Query Parameters
+
+| Имя параметра | Тип | Описание |
+| :--- | :--- | :--- |
+| apiKey | string | Ключ авторизации |
+| partnerId | string | Идентификатор интернет магазина |
+
+#### Тело запроса
+
+В теле запроса передается объект типа view
+
+
+
+
+
 {% api-method method="post" host="https://apptracking.retailrocket.net" path="/1.0/view" %}
 {% api-method-summary %}
 view
