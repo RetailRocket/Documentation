@@ -37,7 +37,7 @@ description: >-
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -87,7 +87,7 @@ curl \
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -139,7 +139,7 @@ curl \
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -189,7 +189,7 @@ curl \
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -238,7 +238,7 @@ curl \
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -293,7 +293,7 @@ curl \
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -343,7 +343,7 @@ curl \
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -391,7 +391,7 @@ curl \
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -439,7 +439,7 @@ API предоставляет возможно пакетной загрузк�
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
