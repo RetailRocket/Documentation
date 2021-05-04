@@ -10,5 +10,5 @@
 ---
 
 * [API получения спонсорских размещений](api-sponsorskikh-razmeshenii.md)
-* [Инструкция по интеграции продукта "Retail Rocket Спонсорское размещение"](instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md)
+* [Инструкция по интеграции продукта "Спонсорские размещение"](instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md)
 
