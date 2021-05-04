@@ -380,7 +380,7 @@ curl \
 
 #### Path
 
-**impressionContentClicked\`**
+**impressionContentClicked**
 
 #### HTTP-метод
 
