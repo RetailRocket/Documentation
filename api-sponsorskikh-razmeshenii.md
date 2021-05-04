@@ -102,7 +102,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить, через запятую |
 | `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
-| `productIds` | Да | string | Идентификаторы товаров, которые вхояд в некоторую группу \(например корзину\), перечисленные через запятую |
+| `productIds` | Да | string | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
 | `stockId` | Нет | string | Идентификатор склада, в контексте которого находится пользователь |
 
 #### **Тип ответа**
