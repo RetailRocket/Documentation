@@ -82,7 +82,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 
 #### Path
 
-`partners/{partnerId}/productGroupsPlacements/{placementId}/impressions`
+`partners/{partnerId}/productGroupPlacements/{placementId}/impressions`
 
 #### Http Method
 
@@ -112,7 +112,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Пример вызова
 
 ```bash
-curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productGroupsPlacements/545f2f85-dcbe-4d2d-8260-6ecdf6c8c415/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productIds=93845,93846,93847&stockId=berlin13'
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/productGroupPlacements/545f2f85-dcbe-4d2d-8260-6ecdf6c8c415/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&productIds=93845,93846,93847&stockId=berlin13'
 ```
 
 ### Спонсорский контент для страниц товарных категорий
