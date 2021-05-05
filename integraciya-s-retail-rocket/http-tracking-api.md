@@ -215,7 +215,7 @@ curl \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"categoryView\": 123456,
+         \"categoryId\": 123456,
          \"stockId\": \"NewYork\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
