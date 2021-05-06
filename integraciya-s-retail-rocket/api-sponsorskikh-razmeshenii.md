@@ -12,7 +12,7 @@ description: >-
 
 **Рекламодатель**: лицо/организация, которая заинтересована в том, чтобы показывать на рекламных площадках свое содержимое, чтобы достигать маркетинговые цели.
 
-**Содержимое для показа \(content\)**: объект произвольного состава, содержащий необходимые данные для показа пользователю рекламной площадки. Запрашивается рекламной площадкой у API спонсорских размещений. Показывается рекламной площадкой с целью получить плату от рекламодателя за просмотр этого сдержимого пользователем площадки.
+**Содержимое для показа \(content\)**: объект произвольного состава, содержащий необходимые данные для показа пользователю рекламной площадки. Запрашивается рекламной площадкой у API спонсорских размещений. Показывается рекламной площадкой с целью получить плату от рекламодателя за просмотр этого содержимого пользователем площадки.
 
 При запросе необходимо использовать параметр строки запроса `acceptContent` для указания типа содержимого, который рекламная площадка готова разместить.
 
@@ -102,7 +102,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить. Через запятую |
 | `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
-| `productIds` | Да | string | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `productIds` | Да | number array | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
 | `stockId` | Нет | string | Идентификатор склада, в контексте которого находится пользователь |
 
 #### **Тип ответа**

@@ -101,7 +101,7 @@ curl \
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
 | `groupId` | Да | integer | [Идентификатор товарной группы](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `productIds` | Да | integer | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `productIds` | Да | number array | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
 | `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
@@ -114,7 +114,7 @@ curl \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"groupView\": 654321,
+         \"groupId\": 654321,
          \"productIds\": [123456, 234567, 345678],
          \"stockId\": \"NewYork\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
@@ -172,9 +172,9 @@ curl \
    "
 ```
 
-### Просмотр страницы категории товара
+### Просмотр страницы товарной категории
 
-Должен быть вызван при просмотре посетителем страницы категори товаров.
+Должен быть вызван при просмотре посетителем страницы товарной категории.
 
 #### Path
 
@@ -202,7 +202,7 @@ curl \
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `categoryView` | Да | integer | [Идентификатор категории товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `categoryId` | Да | integer | [Идентификатор категории товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
@@ -252,10 +252,10 @@ curl \
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
 | `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада, к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `price` | Нет | number | Цена с учетом скидок за **единицу товара** |
-| `quantity` | Нет | number | Кол-во единиц товара в заказе |
-| `transaction` | Нет | string | Идентификатор попкупки |
+| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `price` | Да | number | Цена с учетом скидок за **единицу товара** |
+| `quantity` | Да | number | Кол-во единиц товара в заказе |
+| `transaction` | Да | string | Идентификатор попкупки |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
@@ -307,8 +307,8 @@ curl \
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `searchPhrase` | Да | integer | Поисковая фраза, которую ввел пользователь |
-| `stockId` | Нет | string | [Идентификатор склада, к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `searchPhrase` | Да | string | Поисковая фраза, которую ввел пользователь |
+| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
@@ -329,7 +329,7 @@ curl \
 
 ### Просмотр спонсорского контента
 
-Должен быть вызван при каждом показе посетителю спонсорсокого контента.
+Должен быть вызван при каждом показе посетителю спонсорского контента.
 
 #### Path
 
@@ -357,7 +357,7 @@ curl \
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `impressionContentId` | Да | string | Идентификатор спонсорсокого контента |
+| `impressionContentId` | Да | string | Идентификатор спонсорского контента |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
@@ -405,7 +405,7 @@ curl \
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `impressionContentId` | Да | string | Идентификатор спонсорсокого контента |
+| `impressionContentId` | Да | string | Идентификатор спонсорского контента |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова

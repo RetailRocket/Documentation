@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Глосарий Retail Rocket](README.md)
+* [Глоссарий Retail Rocket](README.md)
 
 ## Интеграция с Retail Rocket
 
