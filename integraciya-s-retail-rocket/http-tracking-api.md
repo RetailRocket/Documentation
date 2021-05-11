@@ -4,9 +4,9 @@ description: >-
   пользовательского поведения на интернет магазине. По средствам протокола HTTP.
 ---
 
-# API трекинга пользовательского поведения
+# API-трекинг пользовательского поведения
 
-Данные о пользовательском поведении необходимы для работы многих продуктов Retail Rocket: товарные рекомендации, автоматизированые коммуникационные кампании, для отслеживания метрик эффективности коммуникаций и т.д.
+Данные о пользовательском поведении необходимы для работы многих продуктов Retail Rocket: товарных рекомендаций, автоматизированых коммуникационных кампаний, для отслеживания метрик эффективности коммуникаций и т.д.
 
 ## **Общие концепции**
 
@@ -22,7 +22,7 @@ description: >-
 
 ### Просмотр карточки товара
 
-Должен быть вызван при каждом просмотре посетителем карточки товара
+Должен быть вызван при каждом просмотре посетителем карточки товара.
 
 #### Path
 
@@ -37,7 +37,7 @@ description: >-
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -124,7 +124,7 @@ curl \
 
 ### Добавление товара в корзину
 
-Должен быть вызван при каждом добавление посетителем товара в корзину.
+Должен быть вызван при каждом добавлении посетителем товара в корзину.
 
 #### Path
 
@@ -153,7 +153,7 @@ curl \
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
 | `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада, к которому пренадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
