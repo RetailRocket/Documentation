@@ -222,6 +222,24 @@ curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/altern
 curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/relatedByInterestedProperties/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&productIds=93845,93846,93847'
 ```
 
+### **Сопутствующие товары, персонализированные с учетом интереса пользователя к свойствам товара**
+
+Предназначен для показа комплементарных товаров к товару или товарам ****которые дополнительно ранжированны в зависимости от интереса пользователей к конкретным свойствам товара\(размер, цвет\). Рекомендации расчитываются на основание поведения других пользователей и учитывают параметры товаров и настройки бизнес-правил в личном кабинете Retail Rocket.
+
+#### **Path**
+
+**`productRecommendations/relatedByInterestedProperties`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazinahttps://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+
 ### **Персональные рекомендации**
 
 Алгоритм персональных рекомендаций возвращает наиболее интересные товары для пользователя
@@ -268,4 +286,24 @@ curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/person
 ```bash
 curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/accessories/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&productIds=93845,93846,93847'
 ```
+
+### Популярные товары к интересующим пользователя категориям
+
+Retail Rocket в реальном времени анализирует интересы пользователя и строит связи «пользователь» – «категория». Это позволяет демонстрировать хиты продаж только из категорий, которые наиболее интересны данному пользователю в долгосрочной перспективе.
+
+#### Path
+
+**`partnerRecommendations/popularInInterestedCategories`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+| `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+
+
 
