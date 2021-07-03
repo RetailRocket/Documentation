@@ -305,5 +305,3 @@ Retail Rocket в реальном времени анализирует инте
 | `stockId` | Нет | string | [Идентификатор склада/региона](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 | `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
-
-
