@@ -110,7 +110,7 @@ API получения товарных-рекомендаций ****приде�
 | `apiKey` | Да | string | [Ключ авторизации](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazinahttps://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 
 #### Пример вызова
 
@@ -136,7 +136,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/popula
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazinahttps://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
 | `categoryIds` | Да | number array | [Идентификатор товарной категории](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 
 #### Пример вызова
 
@@ -165,7 +165,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/popul
 | `apiKey` | Да | string | [Ключ авторизации](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazinahttps://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 | `searchPhrase` | Да | string | Поисковый запрос пользователя |
 
 #### Пример вызова
@@ -189,7 +189,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/searchRecommendations/search/
 | `apiKey` | Да | string | [Ключ авторизации](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazinahttps://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 | `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
 #### Пример вызова
@@ -213,7 +213,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/altern
 | `apiKey` | Да | string | [Ключ авторизации](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazinahttps://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 | `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
 #### Пример вызова
@@ -237,7 +237,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/relate
 | `apiKey` | Да | string | [Ключ авторизации](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#identifikator-internet-magazinahttps://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 | `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
 ### **Персональные рекомендации**
@@ -255,7 +255,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/relate
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 
 #### Пример вызова
 
@@ -278,7 +278,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/person
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 | `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
 #### Пример вызова
@@ -302,6 +302,6 @@ Retail Rocket в реальном времени анализирует инте
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
-| `stockId` | Нет | string | [Идентификатор склада/региона](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 | `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
