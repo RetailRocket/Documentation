@@ -307,7 +307,7 @@ curl \
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
 | `searchPhrase` | Да | string | Поисковая фраза, которую ввел пользователь |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
