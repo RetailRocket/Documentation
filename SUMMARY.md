@@ -8,5 +8,6 @@
 * [API трекинг пользовательского поведения](integraciya-s-retail-rocket/http-tracking-api.md)
 * [Инструкция по интеграции продукта «Спонсорские размещения»](integraciya-s-retail-rocket/instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md)
 * [API получения контента спонсорских размещений](integraciya-s-retail-rocket/api-sponsorskikh-razmeshenii.md)
+* [Инструкция по интеграции продукта «Товарные рекомендации»](integraciya-s-retail-rocket/instrukciya-po-integracii-produkta-tovarnye-rekomendacii.md)
 * [API получения товарных-рекомендаций](integraciya-s-retail-rocket/api-polucheniya-tovarnykh-rekomendacii.md)
 
