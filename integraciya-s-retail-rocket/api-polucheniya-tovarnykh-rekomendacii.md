@@ -129,7 +129,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/popula
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
-| `categoryIds` | Да | number array | [Идентификатор товарной категории](https://mobileapidocs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `categoryIds` | Да | number array | [Идентификаторы товарной категории](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 | `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
 
 #### Пример вызова
