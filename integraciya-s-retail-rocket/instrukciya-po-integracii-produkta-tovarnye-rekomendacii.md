@@ -21,7 +21,7 @@
 
 ## Категорийный контекст
 
-### Популярные товары
+### [Популярные товары](api-polucheniya-tovarnykh-rekomendacii.md#populyarnye-tovary-dlya-ekrana-tovarnoi-kategorii)
 
 ### Популярные товары со скидкой
 
@@ -33,7 +33,7 @@
 
 ## Общий контекст
 
-### Популярные товары
+### [Популярные товары](api-polucheniya-tovarnykh-rekomendacii.md#populyarnye-tovary-dlya-glavnogo-ekrana)
 
 ### Популярные товары со скидкой
 
