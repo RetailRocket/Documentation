@@ -512,7 +512,7 @@ curl \
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `impressionContentId` | Да | string | Идентификатор спонсорского контента |
+| `impressionContentId` | Да | string | [Идентификатор спонсорского контента](instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md#integraciya-sistem) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
@@ -560,7 +560,7 @@ curl \
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `impressionContentId` | Да | string | Идентификатор спонсорского контента |
+| `impressionContentId` | Да | string | [Идентификатор спонсорского контента](instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md#integraciya-sistem) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
