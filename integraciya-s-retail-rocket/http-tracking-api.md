@@ -350,8 +350,8 @@ curl \
 
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации]() |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина]() |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -361,9 +361,9 @@ curl \
 
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя]() |
-| `recomBlockId` | Да | string | [Идентификатор блока рекомендаций]() |
-| `timestamp` | Да | string | [Метка времени вызова]() |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `recomBlockId` | Да | string | Идентификатор блока рекомендаций |
+| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
 
@@ -396,8 +396,8 @@ curl \
 
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации]() |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина]() |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -407,10 +407,10 @@ curl \
 
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя]() |
-| `productId` | Да | integer | [Идентификатор товара]() |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар]() |
-| `timestamp` | Да | string | [Метка времени вызова]() |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 | `recomBlockId` | Да | string | [Идентификатор блока рекомендаций]() |
 
 #### Пример вызова
@@ -450,17 +450,17 @@ curl \
 
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации]() |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина]() |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### Тело запроса
 
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя]() |
-| `productId` | Да | integer | [Идентификатор товара]() |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар]() |
-| `timestamp` | Да | string | [Метка времени вызова]() |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 | `recomBlockId` | Да | string | [Идентификатор блока рекомендаций]() |
 
 #### Пример вызова
