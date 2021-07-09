@@ -172,7 +172,7 @@ curl \
    "
 ```
 
-### Просмотр страницы товарной категории \(При типе интеграции с использованием YML-файла\)
+### Просмотр страницы товарной категории при [передаче товарной базы через YML-файл](obshie-principy-integracii-s-retail-rocket.md#sposoby-peredachi-tovarnoi-bazy)
 
 Должен быть вызван при просмотре посетителем страницы товарной категории.
 
@@ -220,7 +220,7 @@ curl \
    "
 ```
 
-### Просмотр страницы товарной категории \(При типе интеграции без YML-файла\)
+### Просмотр страницы товарной категории при [передаче товарной базы через onsite tracking](obshie-principy-integracii-s-retail-rocket.md#sposoby-peredachi-tovarnoi-bazy)
 
 Должен быть вызван при просмотре посетителем страницы товарной категории.
 
@@ -250,7 +250,7 @@ curl \
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `categoryPath` | Да | string | Путь категории товара |
+| `categoryPath` | Да | string | [Путь категории товара](obshie-principy-integracii-s-retail-rocket.md#sposoby-peredachi-tovarnoi-bazy) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
 #### Пример вызова
