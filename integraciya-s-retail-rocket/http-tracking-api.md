@@ -364,7 +364,7 @@ curl \
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
 | `contactExternalId` | Да | string | [Уникальный идентификатор контакта](http-tracking-api.md#ustanovka-sessii) |
-| `email` | Нет | integer | Адрес почты пользователя |
+| `email` | Нет | string | Адрес почты пользователя |
 | `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 | `phone` | Нет | string | Номер телефона пользователя |
