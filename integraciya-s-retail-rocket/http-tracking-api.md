@@ -326,6 +326,67 @@ curl \
    "
 ```
 
+### Установка канала коммуникации
+
+Привязка каналов коммуникации используется для доставки персонализированного контента пользователю. В данном примере рассматривается Email канал. Метод нужно вызывать при регистрации, успешной авторизации, оформлении заказа и других местах интернет-магазина, когда пользователь может оставить email адрес для получения сообщений.
+
+{% hint style="info" %}
+**`contactExternalId` -**  уникальный идентификатор контакта, по которому пользователь может быть распознан в учетной системе клиента. Служит для обмена информацией о контактах пользователя между платформой Retail Rocket и источниками данных клиента.
+{% endhint %}
+
+#### Требования к contactExternalId
+
+* Должен состоять только из цифр и букв;
+* Не превышать 50 символов;
+
+#### Path
+
+**`setContact`**
+
+#### HTTP-метод
+
+`POST`
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+
+#### Тело запроса
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `contactExternalId` | Да | string | [Уникальный идентификатор контакта](http-tracking-api.md#ustanovka-sessii) |
+| `email` | Нет | integer | Адрес почты пользователя |
+| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
+| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| `phone` | Нет | string | Номер телефона пользователя |
+| `customData` | Нет | string | Пользовательские параметры |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST "https://apptracking.retailrocket.net/1.0/setContact?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"contactExternalId\": \"2342dfgf253454c645346wer3\",
+         \"stockId\": \"NewYork\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\",
+         \"email\": \"example@email.com\"
+      }
+   "
+```
+
 ## Передача данных о взаимодействии с рекомендациями
 
 Для оценки эффективности рекомендаций, а также для учета продаж через товарные рекомендации, необходимо передавать соответствующие события взаимодействия с рекомендациями.
@@ -755,67 +816,6 @@ curl \
 ```
 {% endtab %}
 {% endtabs %}
-
-## Установка канала коммуникации
-
-Привязка каналов коммуникации используется для доставки персонализированного контента пользователю. В данном примере рассматривается Email канал. Метод нужно вызывать при регистрации, успешной авторизации, оформлении заказа и других местах интернет-магазина, когда пользователь может оставить email адрес для получения сообщений.
-
-{% hint style="info" %}
-**`contactExternalId` -**  уникальный идентификатор контакта, по которому пользователь может быть распознан в учетной системе клиента. Служит для обмена информацией о контактах пользователя между платформой Retail Rocket и источниками данных клиента.
-{% endhint %}
-
-#### Требования к contactExternalId
-
-* Должен состоять только из цифр и букв;
-* Не превышать 50 символов;
-
-#### Path
-
-**`setContact`**
-
-#### HTTP-метод
-
-`POST`
-
-#### HTTP-заголовки
-
-`Content-type: application/json`
-
-#### Параметры строки запроса
-
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
-
-#### Тело запроса
-
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `contactExternalId` | Да | string | [Уникальный идентификатор контакта](http-tracking-api.md#ustanovka-sessii) |
-| `email` | Нет | integer | Адрес почты пользователя |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
-| `phone` | Нет | string | Номер телефона пользователя |
-| `customData` | Нет | string | Пользовательские параметры |
-
-#### Пример вызова
-
-```bash
-curl \
-   -X POST "https://apptracking.retailrocket.net/1.0/setContact?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
-   -H "Content-type: application/json" \
-   --data "
-      {
-         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"contactExternalId\": \"2342dfgf253454c645346wer3\",
-         \"stockId\": \"NewYork\",
-         \"timestamp\": \"2018-09-15T15:53:00+00:00\",
-         \"email\": \"example@email.com\"
-      }
-   "
-```
 
 ## Коды ответов
 
