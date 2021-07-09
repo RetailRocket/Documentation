@@ -416,7 +416,7 @@ curl \
 | `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 | `phone` | Нет | string | Номер телефона пользователя |
-| `customData` | Нет | string | Пользовательские параметры |
+| `customData` | Нет | JSON Object | Пользовательские параметры |
 
 #### Пример вызова
 
