@@ -262,7 +262,7 @@ curl \
    --data "
       {
          \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
-         \"categoryPath\": \"Clothes/Women/Skirts\",
+         \"categoryPath\": \"Товары для дома/Кухня/Вилки\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
    "
