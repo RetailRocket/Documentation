@@ -177,11 +177,7 @@ curl \
 Должен быть вызван при просмотре посетителем страницы товарной категории. 
 
 {% hint style="warning" %}
-В зависимости от того как выполнена интеграция передачи [товарной базы](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza), необходимо вызывать один из двух вариантов: `categoryView` или `categoryViewByCategoryPath.`
-
-`categoryView` -- товарная база передается с помощью YML-файла;
-
-`categoryViewByCategoryPath` -- товарная база передается через product API.
+В зависимости от того как выполнена интеграция передачи [товарной базы](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza), необходимо вызывать разные методы для передачи факта просмотра пользователем страницы товарной категории.
 {% endhint %}
 
 #### При интеграции через YML-файл
