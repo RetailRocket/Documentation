@@ -181,7 +181,7 @@ curl \
 
 [Интеграции через YML-файл](http-tracking-api.md#pri-integracii-cherez-yml-fail)
 
-[Интеграции через HTTP API](https://docs.retailrocket.net/integraciya-s-retail-rocket/http-tracking-api#pri-integracii-cherez-product-api)
+[Интеграции через HTTP API](http-tracking-api.md#pri-integracii-cherez-product-api)
 {% endhint %}
 
 #### При интеграции через YML-файл
@@ -217,7 +217,7 @@ curl \
 | `categoryId` | Да | integer | [Идентификатор категории товара](obshie-principy-integracii-s-retail-rocket.md#sposoby-peredachi-tovarnoi-bazy) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
-#### Пример вызова
+Пример вызова
 
 ```bash
 curl \
