@@ -179,7 +179,7 @@ curl \
 {% hint style="warning" %}
 В зависимости от того как выполнена интеграция передачи [товарной базы](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza), необходимо вызывать разные методы для передачи факта просмотра пользователем страницы товарной категории.
 
-[Интеграции через YML-файл](https://docs.retailrocket.net/integraciya-s-retail-rocket/http-tracking-api#pri-integracii-cherez-yml-fail)
+[Интеграции через YML-файл](http-tracking-api.md#pri-integracii-cherez-yml-fail)
 
 [Интеграции через HTTP API](https://docs.retailrocket.net/integraciya-s-retail-rocket/http-tracking-api#pri-integracii-cherez-product-api)
 {% endhint %}
