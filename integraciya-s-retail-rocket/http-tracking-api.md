@@ -24,26 +24,26 @@ description: >-
 
 Должен быть вызван при каждом просмотре посетителем карточки товара.
 
-#### Path
+**Path**
 
 **`view`**
 
-#### HTTP-метод
+**HTTP-метод**
 
 `POST`
 
-#### Параметры строки запроса
+**Параметры строки запроса**
 
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
-#### HTTP-заголовки
+**HTTP-заголовки**
 
 `Content-type: application/json`
 
-#### Тело запроса
+**Тело запроса**
 
 В теле запроса передается объект типа **`ViewEvent`** со следующими полями:
 
@@ -54,7 +54,7 @@ description: >-
 | `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
 | `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 
-#### Пример вызова
+**Пример вызова**
 
 ```bash
 curl \
@@ -459,26 +459,26 @@ curl \
 
 Должен быть вызван при каждом показе блока рекомендаций пользователю приложения
 
-#### Path
+**Path**
 
 **`recomBlockViewed`**
 
-#### HTTP-метод
+**HTTP-метод**
 
 `POST`
 
-#### Параметры строки запроса
+**Параметры строки запроса**
 
 | Имя параметра | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
 | `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
-#### HTTP-заголовки
+**HTTP-заголовки**
 
 `Content-type: application/json`
 
-#### Тело запроса
+**Тело запроса**
 
 | Имя поля | Обязательное | Тип | Описание |
 | :--- | :--- | :--- | :--- |
