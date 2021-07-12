@@ -181,7 +181,7 @@ curl \
 
 [Интеграции через YML-файл](http-tracking-api.md#pri-integracii-cherez-yml-fail)
 
-[Интеграции через HTTP API](http-tracking-api.md#pri-integracii-cherez-product-api) 1
+[Интеграции через HTTP API](http-tracking-api.md#pri-integracii-cherez-product-api)
 {% endhint %}
 
 #### При интеграции через YML-файл
