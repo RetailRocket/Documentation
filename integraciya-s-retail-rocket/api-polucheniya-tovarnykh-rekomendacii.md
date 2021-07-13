@@ -123,9 +123,9 @@ curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/popula
 {% hint style="warning" %}
 В зависимости от того, как выполнена интеграция передачи [товарной базы](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza), необходимо вызывать разные методы для получения товарных рекомендаций для экрана товарной категории.
 
-[Интеграции через YML-файл](http-tracking-api.md#pri-integracii-cherez-yml-fail)
+[Интеграции через YML-файл](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-yml-fail)
 
-[Интеграции через HTTP API](http-tracking-api.md#pri-integracii-cherez-product-api)
+[Интеграции через HTTP API](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-product-api)
 {% endhint %}
 
 #### При интеграции через YML-файл
