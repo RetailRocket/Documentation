@@ -173,7 +173,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/popul
 #### Пример вызова
 
 ```bash
-curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/popularByCategoryPath/?sessionExternalId=73018148&categoryPaths=accu-gereedschap%2Faccu&apiKey=5b333f5697a528b0184b6017&partnerId=59908d02c7d013ce40de715a&session=5bb7b6201323790001561024'
+curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/popularByCategoryPath/?sessionExternalId=73018148&categoryPaths=katinwinkel&categoryPaths=accu-gereedschap%2Faccu&apiKey=5b333f5697a528b0184b6017&partnerId=59908d02c7d013ce40de715a&session=5bb7b6201323790001561024'
 ```
 
 ### **Поисковые рекомендации**
@@ -218,7 +218,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/searchRecommendations/search/
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 | `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
-| `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+| `productIds` | Да | number array | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
 #### Пример вызова
 
@@ -242,7 +242,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/altern
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 | `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
-| `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+| `productIds` | Да | number array | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
 #### Пример вызова
 
@@ -266,7 +266,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/relate
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 | `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
-| `productIds` | Да | string | [Список идентификаторов товара, записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+| `productIds` | Да | number array | [Список идентификаторов товара, записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
 #### Пример вызова
 
@@ -337,7 +337,6 @@ Retail Rocket в реальном времени анализирует инте
 | `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
 | `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
-| `productIds` | Да | string | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
 
 #### Пример вызова
 
