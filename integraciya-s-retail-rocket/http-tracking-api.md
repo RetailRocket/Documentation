@@ -181,7 +181,7 @@ curl \
 
 [Интеграции через YML-файл](http-tracking-api.md#pri-integracii-cherez-yml-fail)
 
-[Интеграции через HTTP API](http-tracking-api.md#pri-integracii-cherez-product-api)
+[Интеграции через Product API](http-tracking-api.md#pri-integracii-cherez-product-api)
 {% endhint %}
 
 #### При интеграции через YML-файл
@@ -232,7 +232,7 @@ curl \
    "
 ```
 
-#### При интеграции через product API
+#### При интеграции через Product API
 
 При использовании product API категория передается как `categoryPath` также она должна быть передана и при просмотре страницы категории.
 
