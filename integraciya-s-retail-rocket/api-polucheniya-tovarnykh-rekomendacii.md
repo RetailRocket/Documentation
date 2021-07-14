@@ -125,7 +125,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/popula
 
 [Интеграции через YML-файл](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-yml-fail)
 
-[Интеграции через HTTP API](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-product-api)
+[Интеграции через Product API](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-product-api) 
 {% endhint %}
 
 #### При интеграции через YML-файл
@@ -152,7 +152,7 @@ curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/popula
 curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/popular/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&categoryIds=123,234,254'
 ```
 
-#### При интеграции через product API
+#### При интеграции через Product API
 
 При использовании product API категория передается как `categoryPath` также она должна быть передана и в метод для получения товарных рекомендаций.
 
