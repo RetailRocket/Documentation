@@ -386,9 +386,9 @@ curl \
    "
 ```
 
-### Установка контакта пользователя
+###  **Аутентификация** пользователя
 
-Установка контакта используется для доставки персонализированного контента пользователю. В данном примере рассматривается Email канал. Метод нужно вызывать при регистрации, успешной авторизации, оформлении заказа и других местах интернет-магазина, когда пользователь может оставить email адрес для получения сообщений.
+Для того чтобы пользовательское поведение было правильнно учтенно в системе контактов, в момент когда становится известен идентификатор посетителя сайта\(логин на сайте\) необходимо передать устойчивый идентификатор посетителя в систему Retail Rocket.
 
 {% hint style="info" %}
 **`contactExternalId` -**  уникальный идентификатор контакта, по которому пользователь может быть распознан в учетной системе клиента. Служит для обмена информацией о контактах пользователя между платформой Retail Rocket и источниками данных клиента.
@@ -424,9 +424,9 @@ curl \
 | :--- | :--- | :--- | :--- |
 | `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
 | `contactExternalId` | Да | string | [Уникальный идентификатор контакта](http-tracking-api.md#ustanovka-sessii) |
+| timestamp | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 | `email` | Нет | string | Адрес почты пользователя |
 | `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 | `phone` | Нет | string | Номер телефона пользователя |
 | `customData` | Нет | JSON Object | Пользовательские параметры |
 
