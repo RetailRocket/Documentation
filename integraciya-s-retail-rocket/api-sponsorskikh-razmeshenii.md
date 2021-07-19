@@ -127,6 +127,18 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 
 ### Спонсорский контент для страниц товарных категорий
 
+{% hint style="warning" %}
+В зависимости от того как выполнена интеграция передачи [товарной базы](../#tovarnaya-baza), необходимо вызывать разные методы для передачи факта просмотра пользователем страницы товарной категории.
+
+[Интеграции через YML-файл](api-sponsorskikh-razmeshenii.md#pri-integracii-cherez-yml-fail)
+
+[Интеграции через Product API](api-sponsorskikh-razmeshenii.md#pri-integracii-cherez-product-api)
+{% endhint %}
+
+#### При интеграции через YML-файл
+
+В YML файле доступно дерево категорий с целочисленными идентификаторами категории, поэтому и товары имеют целочисленные идентификаторы категорий, что позволяет использовать такие идентификаторы для запроса спонсорского контента для страниц товарных категорий.
+
 #### Path
 
 `partners/{partnerId}/categoryPlacements/{placementId}/impressions`
@@ -159,6 +171,44 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 
 ```bash
 curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/categoryPlacements/b17d8910-d0c5-4fd7-97d0-66b314f797f2/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&categoryId=65'
+```
+
+#### При интеграции через Product API
+
+При использовании product API категория передается как `categoryPath` также она должна быть передана и при запросе спонсорского контента для страницы товарной категории.
+
+#### Path
+
+`partners/{partnerId}/categoryPlacements/{placementId}/impressions`
+
+#### Http Method
+
+`GET`
+
+#### Параметры пути запроса
+
+| Имя поля | Тип | Описание |
+| :--- | :--- | :--- |
+| `partnerId` | string | [Идентификатор интернет-магазина](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#identifikator-internet-magazina) |
+| `placementId` | string | Идентификатор места размещения. Выдается сотрудником Retail Rocket |
+
+#### Параметры строки запроса
+
+| Имя поля | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
+| `acceptContent` | Да | string | Типы содержимого, которые площадка готова разместить. Через запятую |
+| `apiKey` | Да | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya) |
+| `categoryPath` | Да | string | [Путь категории товара](../#tovarnaya-baza) |
+
+#### **Тип ответа**
+
+* [Impression](api-sponsorskikh-razmeshenii.md#impression)
+
+#### Пример вызова
+
+```bash
+curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/categoryPlacements/b17d8910-d0c5-4fd7-97d0-66b314f797f2/impressions?apiKey=608423a104249fa8e9952323&sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&acceptContent=productIds,string&categoryPath=Electronics%2FTV'
 ```
 
 ### Спонсорский контент для страницы поиска
