@@ -176,6 +176,66 @@ curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/popul
 curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/popularByCategoryPath/?sessionExternalId=73018148&categoryPaths=katinwinkel&categoryPaths=accu-gereedschap%2Faccu&apiKey=5b333f5697a528b0184b6017&partnerId=59908d02c7d013ce40de715a&session=5bb7b6201323790001561024'
 ```
 
+### **Популярные товары со скидкой для экрана** товарной категории
+
+Предназначен для показа пользователю самых популярных товаров в рамках категорийной группы с учетом скидки. Учитываются товары со скидкой и пользовательское поведение в рамках конкретной категории и всех ее подкатегорий.
+
+{% hint style="warning" %}
+В зависимости от того, как выполнена интеграция передачи [товарной базы](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza), необходимо вызывать разные методы для получения товарных рекомендаций для экрана товарной категории.
+
+[Интеграции через YML-файл](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-yml-fail-1)
+
+[Интеграции через Product API ](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-product-api-1)
+{% endhint %}
+
+#### При интеграции через YML-файл
+
+В YML файле доступно дерево категорий с целочисленными идентификаторами категории, поэтому и товары имеют целочисленные идентификаторы категорий, что позволяет использовать такие идентификаторы для запроса на получение товарных рекомендаций категории.
+
+#### Path
+
+**`categoryRecommendations/saleByPopular`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :---: | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `categoryIds` | Да | number array | [Список идентификаторов товарных категорий, записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+
+#### Пример вызова
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/saleByPopular/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&categoryIds=123,234,254'
+```
+
+#### При интеграции через Product API
+
+При использовании product API категория передается как `categoryPath` также она должна быть передана и в метод для получения товарных рекомендаций.
+
+#### Path
+
+**`categoryRecommendations/saleByPopularByCategoryPath`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :---: | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `categoryPaths` | Да | string array | [Список путей товарных категорий, записанных как несколько параметров через &](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+
+#### Пример вызова
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/saleByPopularByCategoryPath/?sessionExternalId=73018148&categoryPaths=katinwinkel&categoryPaths=accu-gereedschap%2Faccu&apiKey=5b333f5697a528b0184b6017&partnerId=59908d02c7d013ce40de715a&session=5bb7b6201323790001561024'
+```
+
 ### **Поисковые рекомендации**
 
 Предназначен для показа пользователю товаров, наиболее подходящих под его поисковый запрос. Рекомендации рассчитываются на основе поведения других пользователей с подобным поисковым запросом и не учитывают смысл поисковых фраз.
