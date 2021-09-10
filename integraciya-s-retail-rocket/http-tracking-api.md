@@ -394,6 +394,10 @@ curl \
 **`contactExternalId` -**  уникальный идентификатор контакта, по которому пользователь может быть распознан в системе клиента. Служит для обмена информацией о контактах между платформой Retail Rocket и источниками данных клиента.
 {% endhint %}
 
+{% hint style="warning" %}
+**`phone -`** Номер телефона пользователя следует передавать в формате E.164
+{% endhint %}
+
 #### Требования к contactExternalId
 
 * Должен состоять только из цифр и букв;
@@ -427,7 +431,7 @@ curl \
 | timestamp | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
 | `email` | Нет | string | Адрес почты пользователя |
 | `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
-| `phone` | Нет | string | Номер телефона пользователя |
+| `phone` | Нет | string | [Номер телефона пользователя](http-tracking-api.md#autentifikaciya-polzovatelya) |
 | `customData` | Нет | JSON Object | Пользовательские параметры |
 
 #### Пример вызова
