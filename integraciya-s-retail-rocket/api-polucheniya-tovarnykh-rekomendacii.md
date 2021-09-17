@@ -404,3 +404,137 @@ Retail Rocket в реальном времени анализирует инте
 curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/popularInInterestedCategories/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017'
 ```
 
+### Просмотренные товары
+
+Алгоритм возвращает просмотренные пользователем товары.
+
+#### Path
+
+**`partnerRecommendations/personalViewed`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+
+#### Пример вызова
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/partnerRecommendations/personalViewed/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017'
+```
+
+### Сопутствующие товары из категорий, отличных от категории текущего товара
+
+Алгоритм возвращает сопутствующие товарные позиции, которые с максимальной вероятностью могут быть куплены вместе с товаром, к которому запрошены рекомендации. Из рекомендаций сопутствующих товаров удаляются товары, принадлежащие той же категории, что и текущий товар.
+
+#### Path
+
+**`productRecommendations/relatedWithoutCurrentCategory`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+| `productIds` | Да | number array | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+
+#### Пример вызова
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/relatedWithoutCurrentCategory/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&productIds=1254,2345,5484'
+```
+
+### Сопутствующие товары с учетом бизнес-правил
+
+Алгоритм возвращает сопутствующие товарные позиции, которые с максимальной вероятностью могут быть куплены вместе с товаром, к которому запрошены рекомендации. При этом данный алгоритм учитывает бизнес-правила и позволяет:
+
+* Продвинуть товары из непопулярных категорий \(например, новая категория товаров в ассортименте\);
+* Реализовать “экспертные рекомендации” при продаже технически сложных товаров, когда покупатель может не знать что именно нужно докупить учесть пожелания партнера к подбору сопутствующих товаров;
+
+#### Path
+
+**`productRecommendations/relatedWithRules`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+| `productIds` | Да | number array | [Список идентификаторов товара записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+
+#### Пример вызова
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/productRecommendations/relatedWithRules/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&productIds=1254,2345,5484'
+```
+
+### Новинки в категории
+
+Алгоритм возвращает новинки в категории.
+
+{% hint style="warning" %}
+В зависимости от того, как выполнена интеграция передачи [товарной базы](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza), необходимо вызывать разные методы для получения товарных рекомендаций для экрана товарной категории.
+
+[Интеграции через YML-файл](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-yml-fail-2)
+
+[Интеграции через Product API ](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-product-api-2)
+{% endhint %}
+
+#### При интеграции через YML-файл
+
+В YML файле доступно дерево категорий с целочисленными идентификаторами категории, поэтому и товары имеют целочисленные идентификаторы категорий, что позволяет использовать такие идентификаторы для запроса на получение товарных рекомендаций категории.
+
+#### Path
+
+**`categoryRecommendations/latest`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+| `categoryIds` | Да | number array | [Список идентификаторов товарных категорий, записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+
+#### Пример вызова
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/latest/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&categoryIds=1254,2345,5484'
+```
+
+#### При интеграции через Product API
+
+При использовании product API категория передается как `categoryPath` также она должна быть передана и в метод для получения товарных рекомендаций.
+
+#### Path
+
+**`categoryRecommendations/latestByCategoryPath`**
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+| `categoryPaths` | Да | string array | [Список путей товарных категорий, записанных как несколько параметров через &](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza) |
+
+#### Пример вызова
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/latestByCategoryPath/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&categoryPaths=accu-gereedschap%2Faccu'
+```
+
