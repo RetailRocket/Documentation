@@ -538,3 +538,63 @@ curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/lates
 curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/latestByCategoryPath/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&categoryPaths=accu-gereedschap%2Faccu'
 ```
 
+### Новинки со скидками
+
+Алгоритм возвращает новинки по категориям со скидками.
+
+{% hint style="warning" %}
+В зависимости от того, как выполнена интеграция передачи [товарной базы](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza), необходимо вызывать разные методы для получения товарных рекомендаций для экрана товарной категории.
+
+[Интеграции через YML-файл](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-yml-fail-2)
+
+[Интеграции через Product API ](api-polucheniya-tovarnykh-rekomendacii.md#pri-integracii-cherez-product-api-2)
+{% endhint %}
+
+**При интеграции через YML-файл**
+
+В YML файле доступно дерево категорий с целочисленными идентификаторами категории, поэтому и товары имеют целочисленные идентификаторы категорий, что позволяет использовать такие идентификаторы для запроса на получение товарных рекомендаций категории.
+
+**Path**
+
+**`categoryRecommendations/saleByLatest`**
+
+**Параметры строки запроса**
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+| `categoryIds` | Да | number array | [Список идентификаторов товарных категорий, записанных через запятую](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare) |
+
+**Пример вызова**
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/saleByLatest/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&categoryIds=1254,2345,5484'
+```
+
+**При интеграции через Product API**
+
+При использовании product API категория передается как `categoryPath` также она должна быть передана и в метод для получения товарных рекомендаций.
+
+**Path**
+
+**`categoryRecommendations/saleByLatestByCategoryPath`**
+
+**Параметры строки запроса**
+
+| Имя параметра | Обязательное | Тип | Описание |
+| :--- | :--- | :--- | :--- |
+| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
+| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| `sessionExternalId` | Да | string | [Идентификатор пользователя](obshie-principy-integracii-s-retail-rocket.md#upravlenie-sessiei) |
+| `stockId` | Нет | string | [Идентификатор склада/региона](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#podderzhka-regionalnosti-sklad-region) |
+| `categoryPaths` | Да | string array | [Список путей товарных категорий, записанных как несколько параметров через &](obshie-principy-integracii-s-retail-rocket.md#tovarnaya-baza) |
+
+**Пример вызова**
+
+```bash
+curl 'https://externalapi.retailrocket.net/api/3.0/categoryRecommendations/saleByLatestByCategoryPath/?sessionExternalId=3beb9714-82e9-4c08-938d-1391f5d86f2b&stockId=moscow&partnerId=69908d02c7d513ce40de715a&apiKey=5b333f5297a528b0184b6017&categoryPaths=accu-gereedschap%2Faccu'
+```
+
