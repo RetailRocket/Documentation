@@ -10,7 +10,7 @@ description: >-
 
 ## **Общие концепции**
 
-Для передачи пользовательского поведения в систему Retail Rocket необходимо вызывать соответствующие действию методы трекинг API для всех значимых действий пользователя \(просмотр товара, добавление в корзину и т.д.\). Ниже описаны методы для каждого такого действия с их параметрами, возможными кодами ответов и примерами вызова.
+Для передачи пользовательского поведения в систему Retail Rocket необходимо вызывать соответствующие действию методы трекинг API для всех значимых действий пользователя (просмотр товара, добавление в корзину и т.д.). Ниже описаны методы для каждого такого действия с их параметрами, возможными кодами ответов и примерами вызова.
 
 ## **Base URL**
 
@@ -34,10 +34,10 @@ description: >-
 
 **Параметры строки запроса**
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 **HTTP-заголовки**
 
@@ -47,12 +47,12 @@ description: >-
 
 В теле запроса передается объект типа **`ViewEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля            | Обязательное | Тип     | Описание                                                                                                                                                                      |
+| ------------------- | ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string  | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)                         |
+| `productId`         | Да           | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare)                               |
+| `stockId`           | Нет          | string  | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp`         | Да           | string  | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)                             |
 
 **Пример вызова**
 
@@ -84,10 +84,10 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -97,13 +97,13 @@ curl \
 
 В теле запроса передается объект типа **`GroupViewEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `groupId` | Да | integer | [Идентификатор товарной группы](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `productIds` | Да | number array | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля            | Обязательное | Тип          | Описание                                                                                                                                                                      |
+| ------------------- | ------------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string       | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)                         |
+| `groupId`           | Да           | integer      | [Идентификатор товарной группы](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare)                      |
+| `productIds`        | Да           | number array | [Список идентификаторов товаров](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare)                     |
+| `stockId`           | Нет          | string       | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp`         | Да           | string       | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)                             |
 
 #### Пример вызова
 
@@ -136,10 +136,10 @@ curl \
 
 **Параметры строки запроса**
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 **HTTP-заголовки**
 
@@ -149,12 +149,12 @@ curl \
 
 В теле запроса передается объект типа **`AddToBasketEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля            | Обязательное | Тип     | Описание                                                                                                                                                                      |
+| ------------------- | ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string  | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)                         |
+| `productId`         | Да           | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare)                               |
+| `stockId`           | Нет          | string  | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp`         | Да           | string  | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)                             |
 
 #### Пример вызова
 
@@ -174,7 +174,7 @@ curl \
 
 ### Просмотр страницы товарной категории
 
-Должен быть вызван при просмотре посетителем страницы товарной категории. 
+Должен быть вызван при просмотре посетителем страницы товарной категории.&#x20;
 
 {% hint style="warning" %}
 В зависимости от того как выполнена интеграция передачи [товарной базы](../#tovarnaya-baza), необходимо вызывать разные методы для передачи факта просмотра пользователем страницы товарной категории.
@@ -198,10 +198,10 @@ curl \
 
 **Параметры строки запроса**
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 **HTTP-заголовки**
 
@@ -211,11 +211,11 @@ curl \
 
 В теле запроса передается объект типа **`CategoryViewEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `categoryId` | Да | integer | [Идентификатор категории товара](obshie-principy-integracii-s-retail-rocket.md#sposoby-peredachi-tovarnoi-bazy) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля            | Обязательное | Тип     | Описание                                                                                                                                              |
+| ------------------- | ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string  | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `categoryId`        | Да           | integer | [Идентификатор категории товара](obshie-principy-integracii-s-retail-rocket.md#sposoby-peredachi-tovarnoi-bazy)                                       |
+| `timestamp`         | Да           | string  | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
 
 Пример вызова
 
@@ -246,10 +246,10 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -259,11 +259,11 @@ curl \
 
 В теле запроса передается объект типа **`CategoryViewEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `categoryPath` | Да | string | [Путь категории товара](obshie-principy-integracii-s-retail-rocket.md#sposoby-peredachi-tovarnoi-bazy) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля            | Обязательное | Тип    | Описание                                                                                                                                              |
+| ------------------- | ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `categoryPath`      | Да           | string | [Путь категории товара](obshie-principy-integracii-s-retail-rocket.md#sposoby-peredachi-tovarnoi-bazy)                                                |
+| `timestamp`         | Да           | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
 
 #### Пример вызова
 
@@ -294,10 +294,10 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -307,15 +307,15 @@ curl \
 
 В теле запроса передается объект типа **`OrderEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `price` | Да | number | Цена с учетом скидок за **единицу товара** |
-| `quantity` | Да | number | Кол-во единиц товара в заказе |
-| `transaction` | Да | string | Идентификатор покупки |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля            | Обязательное | Тип     | Описание                                                                                                                                                                      |
+| ------------------- | ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string  | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)                         |
+| `productId`         | Да           | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare)                               |
+| `stockId`           | Нет          | string  | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `price`             | Да           | number  | Цена с учетом скидок за **единицу товара**                                                                                                                                    |
+| `quantity`          | Да           | number  | Кол-во единиц товара в заказе                                                                                                                                                 |
+| `transaction`       | Да           | string  | Идентификатор покупки                                                                                                                                                         |
+| `timestamp`         | Да           | string  | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)                             |
 
 #### Пример вызова
 
@@ -350,10 +350,10 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -363,12 +363,12 @@ curl \
 
 В теле запроса передается объект типа **`SearchEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `searchPhrase` | Да | string | Поисковая фраза, которую ввел пользователь |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля            | Обязательное | Тип    | Описание                                                                                                                                              |
+| ------------------- | ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `searchPhrase`      | Да           | string | Поисковая фраза, которую ввел пользователь                                                                                                            |
+| `stockId`           | Нет          | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region)      |
+| `timestamp`         | Да           | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
 
 #### Пример вызова
 
@@ -388,7 +388,7 @@ curl \
 
 ### **Аутентификация** пользователя
 
-Для того чтобы пользовательское поведение было правильнно учтенно для [контакта](../#kontakt), в момент когда становится известен идентификатор посетителя\(логин на сайте\) необходимо передать устойчивый идентификатор посетителя в систему Retail Rocket.
+Для того, чтобы пользовательское поведение было правильно учтено для [контакта](../#kontakt), в момент, когда становится известен идентификатор посетителя(логин на сайте), необходимо передать устойчивый идентификатор посетителя в систему Retail Rocket.
 
 {% hint style="info" %}
 **`contactExternalId` -**  уникальный идентификатор контакта, по которому пользователь может быть распознан в системе клиента. Служит для обмена информацией о контактах между платформой Retail Rocket и источниками данных клиента.
@@ -417,22 +417,22 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### Тело запроса
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `contactExternalId` | Да | string | [Уникальный идентификатор контакта](http-tracking-api.md#ustanovka-sessii) |
-| timestamp | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
-| `email` | Нет | string | Адрес почты пользователя |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region) |
-| `phone` | Нет | string | [Номер телефона пользователя](http-tracking-api.md#autentifikaciya-polzovatelya) |
-| `customData` | Нет | JSON Object | Пользовательские параметры |
+| Имя поля            | Обязательное | Тип         | Описание                                                                                                                                              |
+| ------------------- | ------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string      | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `contactExternalId` | Да           | string      | [Уникальный идентификатор контакта](http-tracking-api.md#ustanovka-sessii)                                                                            |
+| `timestamp`         | Да           | string      | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
+| `email`             | Нет          | string      | Адрес почты пользователя                                                                                                                              |
+| `stockId`           | Нет          | string      | [Идентификатор склада, к которому принадлежит пользователь](obshie-principy-integracii-s-retail-rocket.md#podderzhka-regionalnosti-sklad-region)      |
+| `phone`             | Нет          | string      | [Номер телефона пользователя](http-tracking-api.md#autentifikaciya-polzovatelya)                                                                      |
+| `customData`        | Нет          | JSON Object | Пользовательские параметры                                                                                                                            |
 
 #### Пример вызова
 
@@ -447,6 +447,111 @@ curl \
          \"stockId\": \"NewYork\",
          \"timestamp\": \"2018-09-15T15:53:00+00:00\",
          \"email\": \"example@email.com\"
+      }
+   "
+```
+
+### Запуск сценария 'Welcome Sequence'
+
+Запускает цепочку email-сценария WelcomeSequence.
+
+{% hint style="info" %}
+**Welcome-цепочка** — это приветственное письмо или серия писем, в которых интернет-магазин рассказывает о своем бренде, или об особенностях своей работы.
+{% endhint %}
+
+{% hint style="warning" %}
+На момент вызова метода, email-адрес должен быть в базе подписчиков партнера.
+{% endhint %}
+
+#### Path
+
+**`welcomeSequence`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Тело запроса
+
+| Имя параметра       | Обязательное | Тип    | Описание                                                                                                                                              |
+| ------------------- | ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `timestamp`         | Да           | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
+| `email`             | Да           | string | Адрес почты пользователя                                                                                                                              |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST "https://apptracking.retailrocket.net/1.0/welcomeSequence?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"email\": \"example@gmail.com\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
+      }
+   "
+```
+
+### Клик по содержимому письма
+
+Событие клика по содержимому письма. Должно вызываться, если пользователь переходит из письма.
+
+{% hint style="info" %}
+Все ссылки в письме содержат GET параметр **`MailTrackingId`** с уникальным значением для каждого письма. При каждом переходе из письма на сайт, URL страницы будет содержать параметр **`MailTrackingId`**, значение которого следует передавать в тело запроса.
+{% endhint %}
+
+#### Path
+
+**`emailClick`**
+
+#### HTTP-метод
+
+`POST`
+
+#### Параметры строки запроса
+
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+
+#### HTTP-заголовки
+
+`Content-type: application/json`
+
+#### Тело запроса
+
+| Имя параметра       | Обязательное | Тип         | Описание                                                                                                                                              |
+| ------------------- | ------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string      | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `timestamp`         | Да           | string      | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
+| `mailTrackingId`    | Да           | string      | [Метка пользователя из письма](http-tracking-api.md#zapusk-scenariya-welcome-sequence-1)                                                              |
+| `customData`        | Нет          | JSON объект | Пользовательские параметры                                                                                                                            |
+
+#### Пример вызова
+
+```bash
+curl \
+   -X POST "https://apptracking.retailrocket.net/1.0/emailClick?apiKey=608423a104249fa8e9952323&partnerId=608423a9b126ac6ab3f8f0a5" \
+   -H "Content-type: application/json" \
+   --data "
+      {
+         \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+         \"mailTrackingId\": \"5b488f277ecc191c98859541\",
+         \"timestamp\": \"2018-09-15T15:53:00+00:00\"
       }
    "
 ```
@@ -473,10 +578,10 @@ curl \
 
 **Параметры строки запроса**
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 **HTTP-заголовки**
 
@@ -484,11 +589,11 @@ curl \
 
 **Тело запроса**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `recomBlockId` | Да | string | [Идентификатор блока рекомендаций](http-tracking-api.md#peredacha-dannykh-o-vzaimodeistvii-s-rekomendaciyami) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля            | Обязательное | Тип    | Описание                                                                                                                                              |
+| ------------------- | ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `recomBlockId`      | Да           | string | [Идентификатор блока рекомендаций](http-tracking-api.md#peredacha-dannykh-o-vzaimodeistvii-s-rekomendaciyami)                                         |
+| `timestamp`         | Да           | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
 
 #### Пример вызова
 
@@ -519,10 +624,10 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -530,13 +635,13 @@ curl \
 
 #### Тело запроса
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
-| `recomBlockId` | Да | string | [Идентификатор блока рекомендаций](http-tracking-api.md#peredacha-dannykh-o-vzaimodeistvii-s-rekomendaciyami) |
+| Имя поля            | Обязательное | Тип     | Описание                                                                                                                                                                      |
+| ------------------- | ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string  | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)                         |
+| `productId`         | Да           | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare)                               |
+| `stockId`           | Нет          | string  | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp`         | Да           | string  | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)                             |
+| `recomBlockId`      | Да           | string  | [Идентификатор блока рекомендаций](http-tracking-api.md#peredacha-dannykh-o-vzaimodeistvii-s-rekomendaciyami)                                                                 |
 
 #### Пример вызова
 
@@ -557,7 +662,7 @@ curl \
 
 ### Добавление в корзину из блока рекомендаций
 
-Если в блоке товарных рекомендаций используется кнопка добавления товара в корзину, то при каждом добавлении товара в корзину из блока рекомендаций \(без перехода в карточку товара\) необходимо вызывать обработчик добавления товара из блока в корзину.
+Если в блоке товарных рекомендаций используется кнопка добавления товара в корзину, то при каждом добавлении товара в корзину из блока рекомендаций (без перехода в карточку товара) необходимо вызывать обработчик добавления товара из блока в корзину.
 
 #### **Path**
 
@@ -573,20 +678,20 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### Тело запроса
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `productId` | Да | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `stockId` | Нет | string | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
-| `recomBlockId` | Да | string | [Идентификатор блока рекомендаций](http-tracking-api.md#peredacha-dannykh-o-vzaimodeistvii-s-rekomendaciyami) |
+| Имя поля            | Обязательное | Тип     | Описание                                                                                                                                                                      |
+| ------------------- | ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId` | Да           | string  | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei)                         |
+| `productId`         | Да           | integer | [Идентификатор товара](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare)                               |
+| `stockId`           | Нет          | string  | [Идентификатор склада, к которому принадлежит товар](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#svedeniya-o-tovare) |
+| `timestamp`         | Да           | string  | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)                             |
+| `recomBlockId`      | Да           | string  | [Идентификатор блока рекомендаций](http-tracking-api.md#peredacha-dannykh-o-vzaimodeistvii-s-rekomendaciyami)                                                                 |
 
 #### Пример вызова
 
@@ -621,10 +726,10 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -634,11 +739,11 @@ curl \
 
 В теле запроса передается объект типа **`ImpressionContentViewedEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `impressionContentId` | Да | string | [Идентификатор спонсорского контента](instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md#integraciya-sistem) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля              | Обязательное | Тип    | Описание                                                                                                                                              |
+| --------------------- | ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId`   | Да           | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `impressionContentId` | Да           | string | [Идентификатор спонсорского контента](instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md#integraciya-sistem)                          |
+| `timestamp`           | Да           | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
 
 #### Пример вызова
 
@@ -669,10 +774,10 @@ curl \
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -682,11 +787,11 @@ curl \
 
 В теле запроса передается объект типа **`ImpressionContentViewedEvent`** со следующими полями:
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `sessionExternalId` | Да | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
-| `impressionContentId` | Да | string | [Идентификатор спонсорского контента](instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md#integraciya-sistem) |
-| `timestamp` | Да | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova) |
+| Имя поля              | Обязательное | Тип    | Описание                                                                                                                                              |
+| --------------------- | ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionExternalId`   | Да           | string | [Идентификатор пользователя](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#upravlenie-sessiei) |
+| `impressionContentId` | Да           | string | [Идентификатор спонсорского контента](instrukciya-po-integracii-retail-rocket-sponsorskoe-razmeshenie.md#integraciya-sistem)                          |
+| `timestamp`           | Да           | string | [Метка времени вызова](https://docs.retailrocket.net/integraciya-s-retail-rocket/obshie-principy-integracii-s-retail-rocket#metka-vremeni-vyzova)     |
 
 #### Пример вызова
 
@@ -722,11 +827,11 @@ API предоставляет возможность пакетной загр�
 {% endhint %}
 
 {% hint style="warning" %}
-Из-за необходимости вернуть подтверждение сохранения событий и порядка время ответа **`visitorEvents`**, как правило, на порядки больше времени ответа обычных \(не пакетных\) вызовов трекинга и может составлять порядка 1.5 секунд и более. В связи с этим не следует использовать данный вызов для передачи realtime-событий;
+Из-за необходимости вернуть подтверждение сохранения событий и порядка время ответа **`visitorEvents`**, как правило, на порядки больше времени ответа обычных (не пакетных) вызовов трекинга и может составлять порядка 1.5 секунд и более. В связи с этим не следует использовать данный вызов для передачи realtime-событий;
 {% endhint %}
 
 {% hint style="info" %}
-В вызове можно передать события для разных пользователей \(**sessionExternalId**\);
+В вызове можно передать события для разных пользователей (**sessionExternalId**);
 {% endhint %}
 
 {% hint style="info" %}
@@ -743,10 +848,10 @@ API предоставляет возможность пакетной загр�
 
 #### Параметры строки запроса
 
-| Имя параметра | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `apiKey` | Да | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya) |
-| `partnerId` | Да | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
+| Имя параметра | Обязательное | Тип    | Описание                                                                                                         |
+| ------------- | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `apiKey`      | Да           | string | [Ключ авторизации](obshie-principy-integracii-s-retail-rocket.md#avtorizaciya)                                   |
+| `partnerId`   | Да           | string | [Идентификатор интернет-магазина](obshie-principy-integracii-s-retail-rocket.md#identifikator-internet-magazina) |
 
 #### HTTP-заголовки
 
@@ -758,51 +863,51 @@ API предоставляет возможность пакетной загр�
 
 **`ViewEventEnvelope`**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `view` | Да | `ViewEvent` | Тип подробно описан в разделе «Просмотр карточки товара» как тип параметра тела запроса |
+| Имя поля | Обязательное | Тип         | Описание                                                                                |
+| -------- | ------------ | ----------- | --------------------------------------------------------------------------------------- |
+| `view`   | Да           | `ViewEvent` | Тип подробно описан в разделе «Просмотр карточки товара» как тип параметра тела запроса |
 
 **`GroupEventViewEnvelope`**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `groupView` | Да | `GroupViewEvent` | Тип подробно описан в разделе «Просмотр карточки группового товара» как тип параметра тела запроса |
+| Имя поля    | Обязательное | Тип              | Описание                                                                                           |
+| ----------- | ------------ | ---------------- | -------------------------------------------------------------------------------------------------- |
+| `groupView` | Да           | `GroupViewEvent` | Тип подробно описан в разделе «Просмотр карточки группового товара» как тип параметра тела запроса |
 
 **`AddToBasketEventEnvelope`**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `addToBasket` | Да | `addToBasketEvent` | Тип подробно описан в разделе «Добавление товара в корзину» как тип параметра тела запроса |
+| Имя поля      | Обязательное | Тип                | Описание                                                                                   |
+| ------------- | ------------ | ------------------ | ------------------------------------------------------------------------------------------ |
+| `addToBasket` | Да           | `addToBasketEvent` | Тип подробно описан в разделе «Добавление товара в корзину» как тип параметра тела запроса |
 
 **`OrderEventEnvelope`**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `order` | Да | `OrderEvent` | Тип подробно описан в разделе «Заказ товара» как тип параметра тела запроса |
+| Имя поля | Обязательное | Тип          | Описание                                                                    |
+| -------- | ------------ | ------------ | --------------------------------------------------------------------------- |
+| `order`  | Да           | `OrderEvent` | Тип подробно описан в разделе «Заказ товара» как тип параметра тела запроса |
 
 **`CategoryViewEventEnvelope`**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `categoryView` | Да | `CategoryViewEvent` | Тип подробно описан в разделе «Просмотр страницы категории товара» как тип параметра тела запроса |
+| Имя поля       | Обязательное | Тип                 | Описание                                                                                          |
+| -------------- | ------------ | ------------------- | ------------------------------------------------------------------------------------------------- |
+| `categoryView` | Да           | `CategoryViewEvent` | Тип подробно описан в разделе «Просмотр страницы категории товара» как тип параметра тела запроса |
 
 **`SearchViewEventEnvelope`**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `search` | Да | `SearchViewEvent` | Тип подробно описан в разделе «Просмотр страницы категории товара» как тип параметра тела запроса |
+| Имя поля | Обязательное | Тип               | Описание                                                                                          |
+| -------- | ------------ | ----------------- | ------------------------------------------------------------------------------------------------- |
+| `search` | Да           | `SearchViewEvent` | Тип подробно описан в разделе «Просмотр страницы категории товара» как тип параметра тела запроса |
 
 **`ImpressionContentViewedEventEnvelope`**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `impressionContentViewed` | Да | `ImpressionContentViewedEvent` | Тип подробно описан в разделе «Просмотр спонсорского контента» как тип параметра тела запроса |
+| Имя поля                  | Обязательное | Тип                            | Описание                                                                                      |
+| ------------------------- | ------------ | ------------------------------ | --------------------------------------------------------------------------------------------- |
+| `impressionContentViewed` | Да           | `ImpressionContentViewedEvent` | Тип подробно описан в разделе «Просмотр спонсорского контента» как тип параметра тела запроса |
 
 **`ImpressionContentClickedEventEnvelope`**
 
-| Имя поля | Обязательное | Тип | Описание |
-| :--- | :--- | :--- | :--- |
-| `impressionContentClicked` | Да | `ImpressionContentClickedEvent` | Тип подробно описан в разделе «Клик по спонсорскому контенту» как тип параметра тела запроса |
+| Имя поля                   | Обязательное | Тип                             | Описание                                                                                     |
+| -------------------------- | ------------ | ------------------------------- | -------------------------------------------------------------------------------------------- |
+| `impressionContentClicked` | Да           | `ImpressionContentClickedEvent` | Тип подробно описан в разделе «Клик по спонсорскому контенту» как тип параметра тела запроса |
 
 **Пример вызова**
 
@@ -900,6 +1005,21 @@ curl \
               \"impressionContentId\": \"568da4f6-7952-49b1-afd3-9ac44d6e78c7\",
               \"timestamp\": \"2018-09-15T15:53:00+00:00\"
             }
+        },
+        {
+            \"emailClick\": {
+             \"sessionExternalId\": \"60842392e4881c65e6c5e423\",
+             \"mailTrackingId\": \"5b488f277ecc191c98859541\",         
+             \"customData\": <dictionary>                    
+             \"timestamp\": \"2018-09-15T15:53:00+00:00\"            
+           }  
+        },
+        {
+            \"welcomeSequence\": {
+               \"sessionExternalId\": \"60842392e4881c65e6c5e423\",       
+               \"email\": \"example@gmail.com\",                           
+               \"timestamp\": \"2018-09-15T15:53:00+00:00\"                   
+            }
         }
     ]
 "
@@ -909,19 +1029,18 @@ curl \
 
 ## Коды ответов
 
-| Код ответа | Описание |
-| :--- | :--- |
-| 200 | Запрос принят |
-| 400 | Ошибка в запросе, необходимо проверить правильность построения запроса |
-| 401 | Ошибка аутентификации, проверьте корректность пары `apiKey` |
-| 403 | Доступ запрещен |
-| 404 | Запрошенный ресурс не найден, необходимо проверить правильность URL |
+| Код ответа | Описание                                                               |
+| ---------- | ---------------------------------------------------------------------- |
+| 200        | Запрос принят                                                          |
+| 400        | Ошибка в запросе, необходимо проверить правильность построения запроса |
+| 401        | Ошибка аутентификации, проверьте корректность пары `apiKey`            |
+| 403        | Доступ запрещен                                                        |
+| 404        | Запрошенный ресурс не найден, необходимо проверить правильность URL    |
 
 ## Время ответа
 
-Ожидаемое время ответа – 100 мс для всех ресурсов \(может отличаться из-за особенностей сетевой инфраструктуры\).
+Ожидаемое время ответа – 100 мс для всех ресурсов (может отличаться из-за особенностей сетевой инфраструктуры).
 
 ## Ограничения
 
-По умолчанию действует ограничение в 100 запросов/секунду для площадки. При необходимости возможно изменить \(с помощью аккаунт-менеджера\).
-
+По умолчанию действует ограничение в 100 запросов/секунду для площадки. При необходимости возможно изменить (с помощью аккаунт-менеджера).
