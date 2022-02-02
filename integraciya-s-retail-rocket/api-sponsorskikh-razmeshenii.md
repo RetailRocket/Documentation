@@ -152,11 +152,12 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Параметры строки запроса
 
 | Имя поля            | Обязательное | Тип     | Описание                                                                                                                                                                                          |
-| ------------------- | ------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|---------------------|--------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `sessionExternalId` | Да           | string  | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent`     | Да           | string  | Типы содержимого, которые площадка готова разместить. Через запятую                                                                                                                               |
 | `apiKey`            | Да           | string  | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya)                 |
 | `categoryId`        | Да           | integer | [Идентификатор категории, в контексте которой находится пользователь](../#derevo-tovarnykh-kategorii)                                                                                             |
+| `stockId`           | Нет          | string  | [Идентификатор склада, в контексте которого находится пользователь](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)                                                             |
 
 #### **Тип ответа**
 
@@ -190,11 +191,12 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Параметры строки запроса
 
 | Имя поля            | Обязательное | Тип    | Описание                                                                                                                                                                                          |
-| ------------------- | ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|---------------------|--------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent`     | Да           | string | Типы содержимого, которые площадка готова разместить. Через запятую                                                                                                                               |
 | `apiKey`            | Да           | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya)                 |
 | `categoryPath`      | Да           | string | [Путь категории товара](../#derevo-tovarnykh-kategorii)                                                                                                                                           |
+| `stockId`           | Нет          | string | [Идентификатор склада, в контексте которого находится пользователь](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)                                                             |
 
 #### **Тип ответа**
 
@@ -226,11 +228,12 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Параметры строки запроса
 
 | Имя поля            | Обязательное | Тип    | Описание                                                                                                                                                                                          |
-| ------------------- | ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|---------------------|--------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent`     | Да           | string | Типы содержимого, которые площадка готова разместить. Через запятую                                                                                                                               |
 | `apiKey`            | Да           | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya)                 |
 | `searchQuery`       | Да           | string | Поисковый запрос, который ввел пользователь                                                                                                                                                       |
+| `stockId`           | Нет          | string | [Идентификатор склада, в контексте которого находится пользователь](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)                                                             |
 
 #### **Тип ответа**
 
@@ -260,10 +263,11 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Параметры строки запроса
 
 | Имя поля            | Обязательное | Тип    | Описание                                                                                                                                                                                          |
-| ------------------- | ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|---------------------|--------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent`     | Да           | string | Типы содержимого, которые площадка готова разместить, через запятую                                                                                                                               |
 | `apiKey`            | Да           | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya)                 |
+| `stockId`           | Нет          | string | [Идентификатор склада, в контексте которого находится пользователь](obshie-principy-integracii-s-retail-rocket.md#svedeniya-o-tovare)                                                             |
 
 #### **Тип ответа**
 
