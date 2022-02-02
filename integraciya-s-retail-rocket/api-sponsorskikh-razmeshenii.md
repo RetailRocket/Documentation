@@ -18,6 +18,7 @@
 
 * `string`
 * `productIds`
+* `banners`
 
 Если рекламная площадка готова размещать более одного варианта содержимого, их можно указать через запятую, например: `acceptContent=string,productIds`
 
@@ -278,12 +279,18 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 
 ### Impression
 
-Содержит данные для показа спонсорского содержимого.
+Содержит данные для показа спонсорского содержимого. Может принимать разные формы, в зависимости от значения переданного в запросе `acceptContent`.
 
-| Имя поля  | Обязательное | Тип                                                    | Описание                                                 |
-| --------- | ------------ | ------------------------------------------------------ | -------------------------------------------------------- |
-| `id`      | Да           | string                                                 | Идентификатор запрошенного показа                        |
-| `content` | Да           | StringImpressionContent or ProductIdsImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
+- `StringImpression` соответствует `acceptContent=string`
+- `ProductIdsImpression` соответствует `acceptContent=productIds`
+- `BannersImpression` соответствует `acceptContent=banners`
+
+### StringImpression
+
+| Имя поля  | Обязательное | Тип                     | Описание                                                 |
+|-----------|--------------|-------------------------|----------------------------------------------------------|
+| `id`      | Да           | string                  | Идентификатор запрошенного показа                        |
+| `content` | Да           | StringImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
 
 ### StringImpressionContent
 
@@ -308,6 +315,13 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 }
 ```
 
+### ProductIdsImpression
+
+| Имя поля  | Обязательное | Тип                     | Описание                                                 |
+|-----------|--------------|-------------------------|----------------------------------------------------------|
+| `id`      | Да           | string                  | Идентификатор запрошенного показа                        |
+| `content` | Да           | ProductIdsImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
+
 ### ProductIdsImpressionContent
 
 Cодержимое для показа товарной полки
@@ -327,6 +341,54 @@ Cодержимое для показа товарной полки
     "content": {
         "id": "content identifier",
         "productIds": [123, 321]
+    }
+}
+```
+
+### BannersImpression
+
+| Имя поля  | Обязательное | Тип                     | Описание                                                 |
+|-----------|--------------|-------------------------|----------------------------------------------------------|
+| `id`      | Да           | string                  | Идентификатор запрошенного показа                        |
+| `content` | Да           | ProductIdsImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
+
+### BannersImpression
+
+Cодержимое для показа баннеров
+
+| Имя поля  | Обязательное | Тип          | Описание                        |
+|-----------|--------------|--------------|---------------------------------|
+| `id`      | Да           | string       | Идентификатор содержимого       |
+| `banners` | Да           | Banner array | Массив баннеров для отображения |
+
+### Banner
+
+Информация о баннере
+
+| Имя поля     | Обязательное | Тип    | Описание                             |
+|--------------|--------------|--------|--------------------------------------|
+| `targetUrl`  | Нет          | string | URL для перехода при клике на баннер |
+| `pictureUrl` | Да           | string | URL изображения                      |
+
+### Примеры
+
+Объект типа Impression с полем `content` типа «баннеры».
+
+```javascript
+{
+    "id": "impression identifier",
+    "content": {
+        "id": "content identifier",
+        "banners": [
+            {
+                "targetUrl" : "http://host/path",
+                "pictureUrl": "http://host/path/image.png"
+            },
+            {
+                "targetUrl" : "http://host/path",
+                "pictureUrl": "http://host/path/image.png"
+            },
+        ]
     }
 }
 ```
