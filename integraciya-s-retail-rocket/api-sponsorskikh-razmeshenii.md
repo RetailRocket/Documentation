@@ -33,11 +33,12 @@
 * `string`
 * `productIds`
 * `banners`
+* `sharedBanners`
 
 Если рекламная площадка готова размещать более одного варианта содержимого, их можно указать через запятую, например: `acceptContent=string,productIds`
 
 ### **Рекламное место**
-
+****
 Область страницы web-приложения или экрана мобильного приложения рекламной площадки, предназначенная для размещения там платного содержимого. Бывает разных типов в зависимости от вида, места, области размещения:
 
 * **any placement  –** место размещения рекламы, которое может находиться в любом разделе веб-сайта или мобильного приложения;
@@ -166,7 +167,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Параметры строки запроса
 
 | Имя поля            | Обязательное | Тип     | Описание                                                                                                                                                                                          |
-|---------------------|--------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------- | ------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sessionExternalId` | Да           | string  | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent`     | Да           | string  | Типы содержимого, которые площадка готова разместить. Через запятую                                                                                                                               |
 | `apiKey`            | Да           | string  | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya)                 |
@@ -205,7 +206,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Параметры строки запроса
 
 | Имя поля            | Обязательное | Тип    | Описание                                                                                                                                                                                          |
-|---------------------|--------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------- | ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent`     | Да           | string | Типы содержимого, которые площадка готова разместить. Через запятую                                                                                                                               |
 | `apiKey`            | Да           | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya)                 |
@@ -242,7 +243,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Параметры строки запроса
 
 | Имя поля            | Обязательное | Тип    | Описание                                                                                                                                                                                          |
-|---------------------|--------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------- | ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent`     | Да           | string | Типы содержимого, которые площадка готова разместить. Через запятую                                                                                                                               |
 | `apiKey`            | Да           | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya)                 |
@@ -277,7 +278,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 #### Параметры строки запроса
 
 | Имя поля            | Обязательное | Тип    | Описание                                                                                                                                                                                          |
-|---------------------|--------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------- | ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sessionExternalId` | Да           | string | [Идентификатор пользователя](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#upravlenie-sessiei) |
 | `acceptContent`     | Да           | string | Типы содержимого, которые площадка готова разместить, через запятую                                                                                                                               |
 | `apiKey`            | Да           | string | [Ключ авторизации](https://github.com/RetailRocket/Documentation/tree/117692a06b3c513e32856a45dee367feafada3cb/obshie-principy-integracii-s-retail-rocket/README.md#avtorizaciya)                 |
@@ -302,13 +303,15 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 - `StringImpression` соответствует `acceptContent=string`
 - `ProductIdsImpression` соответствует `acceptContent=productIds`
 - `BannersImpression` соответствует `acceptContent=banners`
+- `SharedBannersImpression` соответствует `acceptContent=sharedBanners`
 
 ### StringImpression
 
-| Имя поля  | Обязательное | Тип                     | Описание                                                 |
-|-----------|--------------|-------------------------|----------------------------------------------------------|
-| `id`      | Да           | string                  | Идентификатор запрошенного показа                        |
-| `content` | Да           | StringImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
+| Имя поля      | Обязательное | Тип                     | Описание                                                 |
+| ------------- | ------------ | ----------------------- | -------------------------------------------------------- |
+| `id`          | Да           | string                  | Идентификатор запрошенного показа                        |
+| `contentType` | Нет          | string                  | Тип содержимого. Всегда равен `string`                   |
+| `content`     | Да           | StringImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
 
 ### StringImpressionContent
 
@@ -326,6 +329,7 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 ```javascript
 {
     "id": "impression identifier",
+    "contentType": "string",
     "content": {
         "id": "content identifier",
         "string": "any string"
@@ -335,10 +339,11 @@ curl 'https://visitors-sp.retailrocket.net/v1/partners/608423a9b126ac6ab3f8f0a5/
 
 ### ProductIdsImpression
 
-| Имя поля  | Обязательное | Тип                     | Описание                                                 |
-|-----------|--------------|-------------------------|----------------------------------------------------------|
-| `id`      | Да           | string                  | Идентификатор запрошенного показа                        |
-| `content` | Да           | ProductIdsImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
+| Имя поля      | Обязательное | Тип                         | Описание                                                 |
+| ------------- | ------------ | --------------------------- | -------------------------------------------------------- |
+| `id`          | Да           | string                      | Идентификатор запрошенного показа                        |
+| `contentType` | Нет          | string                      | Тип содержимого. Всегда равен `productIds`               |
+| `content`     | Да           | ProductIdsImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
 
 ### ProductIdsImpressionContent
 
@@ -356,6 +361,7 @@ Cодержимое для показа товарной полки
 ```javascript
 {
     "id": "impression identifier",
+    "contentType": "productIds",
     "content": {
         "id": "content identifier",
         "productIds": [123, 321]
@@ -365,17 +371,18 @@ Cодержимое для показа товарной полки
 
 ### BannersImpression
 
-| Имя поля  | Обязательное | Тип                     | Описание                                                 |
-|-----------|--------------|-------------------------|----------------------------------------------------------|
-| `id`      | Да           | string                  | Идентификатор запрошенного показа                        |
-| `content` | Да           | ProductIdsImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
+| Имя поля      | Обязательное | Тип                      | Описание                                                 |
+| ------------- | ------------ | ------------------------ | -------------------------------------------------------- |
+| `id`          | Да           | string                   | Идентификатор запрошенного показа                        |
+| `contentType` | Нет          | string                   | Тип содержимого. Всегда равен `banners`                  |
+| `content`     | Да           | BannersImpressionContent | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
 
-### BannersImpression
+### BannersImpressionContent
 
 Cодержимое для показа баннеров
 
 | Имя поля  | Обязательное | Тип          | Описание                        |
-|-----------|--------------|--------------|---------------------------------|
+| --------- | ------------ | ------------ | ------------------------------- |
 | `id`      | Да           | string       | Идентификатор содержимого       |
 | `banners` | Да           | Banner array | Массив баннеров для отображения |
 
@@ -384,7 +391,7 @@ Cодержимое для показа баннеров
 Информация о баннере
 
 | Имя поля     | Обязательное | Тип    | Описание                             |
-|--------------|--------------|--------|--------------------------------------|
+| ------------ | ------------ | ------ | ------------------------------------ |
 | `targetUrl`  | Нет          | string | URL для перехода при клике на баннер |
 | `pictureUrl` | Да           | string | URL изображения                      |
 
@@ -395,6 +402,7 @@ Cодержимое для показа баннеров
 ```javascript
 {
     "id": "impression identifier",
+    "contentType": "banners",
     "content": {
         "id": "content identifier",
         "banners": [
@@ -408,6 +416,52 @@ Cодержимое для показа баннеров
             },
         ]
     }
+}
+```
+
+### SharedBannersImpression
+
+Содержимое для показа общих баннеров. Отличается от BannersImpression тем, что тут могут присутствовать баннеры разных рекламодателей.
+
+| Имя поля      | Обязательное | Тип                           | Описание                                                 |
+| ------------- | ------------ | ----------------------------- | -------------------------------------------------------- |
+| `id`          | Да           | string                        | Идентификатор запрошенного показа                        |
+| `contentType` | Нет          | string                        | Тип содержимого. Всегда равен `sharedBanners`            |
+| `content`     | Да           | BannerImpressionContent array | [Содержимое для показа](api-sponsorskikh-razmeshenii.md) |
+
+### BannerImpressionContent
+
+Cодержимое для показа баннера
+
+| Имя поля | Обязательное | Тип    | Описание                  |
+| -------- | ------------ | ------ | ------------------------- |
+| `id`     | Да           | string | Идентификатор содержимого |
+| `banner` | Да           | Banner | Баннер для отображения    |
+
+### Примеры
+
+Объект типа Impression с полем `content` типа «общие баннеры».
+
+```javascript
+{
+    "id": "impression identifier",
+    "contentType": "sharedBanners",
+    "content": [
+        {
+            "id": "content identifier",
+            "banner": {
+                "targetUrl" : "http://host/path",
+                "pictureUrl": "http://host/path/image.png"
+            }
+        },
+        {
+            "id": "content identifier",
+            "banner": {
+                "targetUrl" : "http://host/path",
+                "pictureUrl": "http://host/path/image.png"
+            }
+        }
+    ]
 }
 ```
 
